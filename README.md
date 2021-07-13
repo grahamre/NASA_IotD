@@ -1,10 +1,10 @@
-## NASA_IotD
-# NASA Image of the Day Application
+# NASA_IotD
+### NASA Image of the Day Application
 
 Graham Gammon-Everitt & Arpit Patel
 CST2335 - 450
 
-# Requirements
+### Requirements
 
 1.  The project must have a ListView somewhere to present items. Selecting an item from the ListView must show detailed information about the item selected.
 
@@ -32,7 +32,7 @@ CST2335 - 450
 
 13. The functions and variables you write must be properly documented using JavaDoc comments.
 
-# Milestones
+### Milestones
 
 Bonus marks will be awarded for displaying correct functionality by the following dates:
 Milestone number and date  	Requirements implemented 	  Bonus Marks available
@@ -40,7 +40,7 @@ Milestone number and date  	Requirements implemented 	  Bonus Marks available
 2) July 26th 	                4, 6, 7, 9, 11, 13 	         5
 3) August 2nd 	              5, 8, 10, 11, 12, 13 	       5
 
-# Submission Summary
+### Submission Summary
 
 Here is a summary of the expected submissions:
 

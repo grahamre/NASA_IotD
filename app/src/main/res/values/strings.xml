@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">NASA IotD</string>
+    <string name="app_name">FinalProject</string>
+    <string name="welcomeText">Welcome to the NASA Image Of The Day App</string>
+    <string name="enter">Enter The App</string>
+    <string name="back">Go Back To Homepage</string>
+    <string name="savedPics">Access Saved Pictures</string>
 </resources>

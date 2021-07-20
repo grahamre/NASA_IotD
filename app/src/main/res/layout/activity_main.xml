@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/teal_200"
     tools:context=".MainActivity">
+
 
     <TextView
         android:id="@+id/welcomeTxt"
@@ -17,27 +19,46 @@
         android:textColor="@color/black"
         android:textSize="30dp" />
 
+    <TextView
+        android:id="@+id/nameMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textSize="20dp"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:text="Enter Your Name" />
+
+    <EditText
+        android:id="@+id/yourName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:textSize="20dp"
+        android:hint="Enter your Name.." />
+
+    <CheckBox
+        android:id="@+id/confirmBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Are You Human?"
+        android:textSize="20dp"
+        android:textAlignment="center"
+        android:textColor="@color/black" />
+
     <Button
         android:id="@+id/enterBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/welcomeTxt"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="20dp"
         android:text="@string/enter" />
 
     <Button
-        android:id="@+id/picbtn"
+        android:id="@+id/picBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/enterBtn"
         android:text="@string/savedPics"/>
 
-    <ProgressBar style="?android:attr/progressBarStyleLarge"
-        android:id="@+id/loadingBar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:visibility="invisible"/>
-
-
-</RelativeLayout>
+</LinearLayout>

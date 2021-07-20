@@ -24,7 +24,10 @@ import android.os.Bundle;
 import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.ProgressBar;
+
+import com.google.android.material.snackbar.Snackbar;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -33,23 +36,33 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ProgressBar progressBar = findViewById(R.id.loadingBar);
+        CheckBox confirmBox = findViewById(R.id.confirmBox);
         Button enterBtn = findViewById(R.id.enterBtn);
-        Button picBtn = findViewById(R.id.picbtn);
+        Button picBtn = findViewById(R.id.picBtn);
 
-        //setting the visibility of Progress Bar
-        /** trying to figure out where we can actually use the progress bar */
-        //progressBar.setVisibility(View.VISIBLE);
-
+        /** Image of the day activity is activated */
         enterBtn.setOnClickListener( (click) -> {
             Intent imageOfaTheDay = new Intent(MainActivity.this, ImageOfTheDay.class);
             startActivity(imageOfaTheDay);
         });
 
-        //setOnClickListener on Access Saved Picture Button to point to the listView Activity
+        /** clicking this button will activate the activity that contains list view of images */
         picBtn.setOnClickListener( (click) -> {
             Intent imageList = new Intent(MainActivity.this, ImageList.class);
             startActivity(imageList);
+        });
+
+        /** Confirmation box to see if the user is human or a robot */
+        confirmBox.setOnCheckedChangeListener( (box, b) -> {
+            if(b) {
+                Snackbar.make(confirmBox, confirmBox.getResources().getString(R.string.cbMessage1), Snackbar.LENGTH_LONG)
+                        .setAction("Undo",click-> box.setChecked(!b))
+                        .show();
+            } else {
+                Snackbar.make(confirmBox,confirmBox.getResources().getString(R.string.cbMessage2), Snackbar.LENGTH_LONG)
+                        .setAction("Undo",click-> box.setChecked(!b))
+                        .show();
+            }
         });
     }
 }

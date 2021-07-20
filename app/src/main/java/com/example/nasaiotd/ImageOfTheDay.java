@@ -2,7 +2,11 @@ package com.example.nasaiotd;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.media.Image;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageButton;
+import android.widget.Toast;
 
 public class ImageOfTheDay extends AppCompatActivity {
 
@@ -13,5 +17,16 @@ public class ImageOfTheDay extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_image_of_the_day);
+
+        ImageButton imageOfTheDay = findViewById(R.id.imageOfTheDay);
+
+        imageOfTheDay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(ImageOfTheDay.this, ImageOfTheDay.this.getResources().getString(R.string.toast_message),Toast.LENGTH_LONG)
+                        .show();
+            }
+        });
+
     }
 }

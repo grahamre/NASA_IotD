@@ -66,3 +66,23 @@ Milestone 3 -   August 2nd 11:59PM (Optional): Both team member submits a pdf. T
 Final project - August 13th 11:59PM: Both team members submits identical pdf and zip of the source 
                 code to Brightspace. The Github repository's main or master branch has to contain 
                 the final code.
+
+### Scope
+
+Create an interface that allows the user to enter a date to retrieve an image from NASA’s web 
+servers. There should be a date picker object that allows the user to pick a given date 
+(https://developer.android.com/guide/topics/ui/controls/pickers#java). Your application will then 
+call the API:
+    https://api.nasa.gov/planetary/apod?api_key=DgPLcIlnmN0Cwrzcg3e9NraFaYLIDI68Ysc6Zh3d&date=2020-02-01
+    
+You should modify the query by changing the date string at the end of the query. The API key in the 
+URL is good for 1000 queries per hour. It is likely that once students start working on the projects, 
+that we will go over the limit. You should probably sign up for your own key here: https://api.nasa.gov/.
+
+This call will return a JSON object that has a URL, DATE, and HDURL. You should display the date and 
+URL on the page, and a link to the HD image. If the user clicks the link, you should load the URL in 
+the built-in browser on your device.
+
+The user should be able to save various dates and images to the device for later viewing. The saved 
+images should be shown in a list that lets the user view various images that are also saved on the 
+device. The user should also be able to delete images that have been saved to the device.

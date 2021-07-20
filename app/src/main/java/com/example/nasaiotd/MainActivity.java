@@ -42,9 +42,8 @@ public class MainActivity extends AppCompatActivity {
         //progressBar.setVisibility(View.VISIBLE);
 
         enterBtn.setOnClickListener( (click) -> {
-
-            /** clicking this button will point to starting image retrieval process */
-
+            Intent imageOfaTheDay = new Intent(MainActivity.this, ImageOfTheDay.class);
+            startActivity(imageOfaTheDay);
         });
 
         //setOnClickListener on Access Saved Picture Button to point to the listView Activity

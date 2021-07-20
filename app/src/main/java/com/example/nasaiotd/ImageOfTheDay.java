@@ -22,6 +22,7 @@ public class ImageOfTheDay extends AppCompatActivity {
 
         ImageButton imageOfTheDay = findViewById(R.id.imageOfTheDay);
 
+        // Clicking on the image button will summon a toast with info pertaining to the image.
         imageOfTheDay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -38,7 +39,7 @@ public class ImageOfTheDay extends AppCompatActivity {
 //        req.execute();
 
     }
-
+    // Getting the private class ready for downloading the image and dealing with the progress bar.
     private class NASAImageQuery extends AsyncTask<String, Integer, String> {
 
         ProgressBar downloadProgress = findViewById(R.id.progressBar);

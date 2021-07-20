@@ -21,15 +21,17 @@
     <ImageButton
         android:id="@+id/imageOfTheDay"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="400dp"
         android:layout_marginTop="50dp"
+        android:scaleType="fitStart"
+        android:backgroundTint="@color/black"
         android:src="@drawable/NASAimage"/>
 
     <ProgressBar
         android:id="@+id/progressBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="500dp"
+        android:layout_marginTop="00dp"
         android:visibility="invisible" />
 
 </LinearLayout>

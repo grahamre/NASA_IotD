@@ -26,6 +26,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
 
+/**
+ * NASA Image of the Day application.
+ *
+ * @author  Arpit Patel
+ * @author Graham Gammon-Everitt
+ */
+
 public class MainActivity extends AppCompatActivity {
 
     @Override

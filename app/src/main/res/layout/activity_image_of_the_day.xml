@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/black"
     tools:context=".ImageOfTheDay">
 
     <TextView
@@ -14,18 +15,23 @@
         android:layout_marginTop="10dp"
         android:text="Test Welcome"
         android:gravity="center"
+        android:textColor="@color/white"
         android:textSize="15sp" />
 
     <ImageButton
         android:id="@+id/imageOfTheDay"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"/>
+        android:layout_height="400dp"
+        android:layout_marginTop="50dp"
+        android:scaleType="fitStart"
+        android:backgroundTint="@color/black"
+        android:src="@drawable/nasa_image"/>
 
     <ProgressBar
         android:id="@+id/progressBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="500dp"/>
+        android:layout_marginTop="00dp"
+        android:visibility="invisible" />
 
 </LinearLayout>

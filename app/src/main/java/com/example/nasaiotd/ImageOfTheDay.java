@@ -3,9 +3,11 @@ package com.example.nasaiotd;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.media.Image;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 public class ImageOfTheDay extends AppCompatActivity {
@@ -28,5 +30,33 @@ public class ImageOfTheDay extends AppCompatActivity {
             }
         });
 
+        ProgressBar downloadProgress = findViewById(R.id.progressBar);
+        downloadProgress.setVisibility(View.VISIBLE);
+
+        // Query for image
+        NASAImageQuery req = new NASAImageQuery();
+//        req.execute();
+
+    }
+
+    private class NASAImageQuery extends AsyncTask<String, Integer, String> {
+
+        ProgressBar downloadProgress = findViewById(R.id.progressBar);
+
+        @Override
+        protected String doInBackground(String... strings) {
+            return null;
+        }
+
+        @Override
+        protected void onProgressUpdate(Integer... value) {
+            super.onProgressUpdate(value);
+            downloadProgress.setProgress(value[0]);
+        }
+
+        @Override
+        public void onPostExecute(String fromDoInBackground) {
+            downloadProgress.setVisibility(View.INVISIBLE);
+        }
     }
 }

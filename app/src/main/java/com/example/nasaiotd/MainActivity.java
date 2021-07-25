@@ -10,22 +10,28 @@ import android.widget.EditText;
 import com.google.android.material.snackbar.Snackbar;
 
 /*
-Milestone 1 -
-     July 19th 11:59PM (Optional): Both team member submits a pdf. The Github repository
-     needs to have a branch called milestone_1 containing the code for milestone_1.
+Milestone 2 -   July 26th 11:59PM (Optional): Both team member submits a pdf. The Github repository
+                needs to have a branch called milestone_2 containing the code for milestone_2.
 
-     Milestone number and date  	Requirements implemented 	  Bonus Marks available
-     1) July 19th                 1,2, 3, 11, 13                5
+    Milestone number and date  	Requirements implemented 	  Bonus Marks available
+    2) July 26th                    4, 6, 7, 9, 11, 13            5
 
-     2.  The project must have at least 1 progress bar and at least 1 button.
+    4.  The software must have at least 4 or more activities. Your activity must be accessible by
+    selecting a graphical icon from a Toolbar, and NavigationDrawer. The top navigation
+    layout should have the Activity’s title, and a version number.
 
-     3.  The project must have at least 1 edit text with appropriate text input method and at least 1
-     Toast and 1 Snackbar.
+    6.  Each activity must have a help menu item that displays an AlertDialog with instructions for
+    how to use the interface.
 
-     11. All activities must be integrated into a single working application, on a single emulator, and
-     must be uploaded to GitHub.
+    7.  There must be at least 1 other language supported by your Activity. Please use Canadian French
+    as the secondary language if you do not you know a language other than English.
 
-     13. The functions and variables you write must be properly documented using JavaDoc comments.
+    9.  When retrieving data from an http server, the activity must use an AsyncTask.
+
+    11. All activities must be integrated into a single working application, on a single emulator, and
+    must be uploaded to GitHub.
+
+    13. The functions and variables you write must be properly documented using JavaDoc comments.
  */
 
 public class MainActivity extends AppCompatActivity {

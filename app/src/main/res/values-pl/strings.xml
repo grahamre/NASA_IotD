@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <string name="app_name">Obraz dnia NASA</string>
+    <string name="welcomeText">Witamy w aplikacji Obraz dnia NASA</string>
+    <string name="enter">Wprowadź aplikację</string>
+    <string name="back">Powrót do strony głównej</string>
+    <string name="savedPics">Dostęp do zapisanych zdjęć</string>
+    <string name="cbMessage1">Potwierdziłeś swoje człowieczeństwo</string>
+    <string name="cbMessage2">Proszę potwierdzić swoje człowieczeństwo</string>
+
+    <!--ImageOfTheDay Activity-->
+    <string name="hdButtonText">Zobacz w jakości HD</string>
+    <string name="welcomeTextIotD">Witam %1$s, spójrz na dzisiejszy obraz NASA!</string>
+</resources>

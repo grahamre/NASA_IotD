@@ -1,10 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+
 <resources>
-    <string name="app_name">FinalProject</string>
+    <string name="app_name">NASA Image of the Day</string>
     <string name="welcomeText">Welcome to the NASA Image Of The Day App</string>
     <string name="enter">Enter The App</string>
     <string name="back">Go Back To Homepage</string>
     <string name="savedPics">Access Saved Pictures</string>
-    <string name="toast_message">This will usually display the date of the picture</string>
-    <string name="cbMessage1">You have confirmed your identity</string>
-    <string name="cbMessage2">You have not confirmed your identity</string>
+    <string name="cbMessage1">You have confirmed your humanity</string>
+    <string name="cbMessage2">Please confirm your humanity</string>
+
+    <!--Image of the Day Activity-->
+    <string name="hdButtonText">View in HD</string>
+    <string name="welcomeTextIotD">Hey there %1$s, check out today\'s pic from NASA!</string>
 </resources>

@@ -2,18 +2,43 @@ package com.example.nasaiotd;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.ComponentName;
+import android.content.Context;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.media.Image;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 
 public class ImageOfTheDay extends AppCompatActivity {
 
-    // This is the NASA API key:
+    // This is our NASA API key:
     // VV3DcWE3AbEdOJQqg6ROHRbFU6p9dRrDlM4ngREj
+    String apiLink = "https://api.nasa.gov/planetary/apod?api_key=VV3DcWE3AbEdOJQqg6ROHRbFU6p9dRrDlM4ngREj&date=2020-02-01";
+    String toastMessage;
+    String hdButtonLink;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,9 +51,14 @@ public class ImageOfTheDay extends AppCompatActivity {
         imageOfTheDay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(ImageOfTheDay.this, ImageOfTheDay.this.getResources().getString(R.string.toast_message),Toast.LENGTH_LONG)
+                Toast.makeText(ImageOfTheDay.this, toastMessage,Toast.LENGTH_LONG)
                         .show();
             }
+        });
+
+        Button hdButton = findViewById(R.id.hdButton);
+        hdButton.setOnClickListener( (click) -> {
+//             Make this open a browser using the imageHDURL.
         });
 
         ProgressBar downloadProgress = findViewById(R.id.progressBar);
@@ -36,17 +66,72 @@ public class ImageOfTheDay extends AppCompatActivity {
 
         // Query for image
         NASAImageQuery req = new NASAImageQuery();
-//        req.execute();
+        req.execute(apiLink);
 
     }
-    // Getting the private class ready for downloading the image and dealing with the progress bar.
+
     private class NASAImageQuery extends AsyncTask<String, Integer, String> {
+
+        String date, explanation, imageHDURL, title, imageURL;
+        Bitmap nasaImage;
 
         ProgressBar downloadProgress = findViewById(R.id.progressBar);
 
         @Override
-        protected String doInBackground(String... strings) {
-            return null;
+        protected String doInBackground(String... args) {
+            try {
+                URL url = new URL(args[0]);
+                HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
+                InputStream responseTwo = urlConnection.getInputStream();
+
+                BufferedReader reader = new BufferedReader(new InputStreamReader(responseTwo, "UTF-8"), 8);
+                StringBuilder sb = new StringBuilder();
+
+                String line;
+                while ((line = reader.readLine()) != null)
+                {
+                    sb.append(line + "\n");
+                }
+                String result = sb.toString();
+
+                // convert string to JSON:
+                JSONObject nasaImageData = new JSONObject(result);
+
+                // Pull API data.
+                date = nasaImageData.getString("date");
+                explanation = nasaImageData.getString("explanation");
+                imageHDURL = nasaImageData.getString("hdurl");
+                title = nasaImageData.getString("title");
+                imageURL = nasaImageData.getString("url");
+
+                // get image
+//                if (fileExists(imageURL)) {
+//                    FileInputStream fis = null;
+//                    try {
+//                        fis = openFileInput(imageURL);
+//                    }
+//                    catch (FileNotFoundException e) {    e.printStackTrace();  }
+//                    nasaImage = BitmapFactory.decodeStream(fis);
+//
+//                } else {
+                    nasaImage = null;
+                    url = new URL(imageURL);
+                    urlConnection = (HttpURLConnection) url.openConnection();
+                    urlConnection.connect();
+                    int responseCode = urlConnection.getResponseCode();
+                    if (responseCode == 200) {
+                        nasaImage = BitmapFactory.decodeStream(urlConnection.getInputStream());
+                    }
+                    FileOutputStream outputStream = openFileOutput(imageURL, Context.MODE_PRIVATE);
+                    nasaImage.compress(Bitmap.CompressFormat.PNG, 80, outputStream);
+                    outputStream.flush();
+                    outputStream.close();
+                    publishProgress(100);
+//                }
+            } catch (Exception e) {
+                Log.e("Error accessing API", e.getMessage());
+            }
+            return "Done";
         }
 
         @Override
@@ -57,7 +142,18 @@ public class ImageOfTheDay extends AppCompatActivity {
 
         @Override
         public void onPostExecute(String fromDoInBackground) {
+            ImageButton imageOfTheDay = findViewById(R.id.imageOfTheDay);
+            imageOfTheDay.setImageBitmap(nasaImage);
+            TextView imageTitle = findViewById(R.id.imageTitle);
+            imageTitle.setText(title);
+            toastMessage = explanation;
+            hdButtonLink = imageHDURL;
             downloadProgress.setVisibility(View.INVISIBLE);
         }
+    }
+
+    public boolean fileExists(String fname){
+        File file = getBaseContext().getFileStreamPath(fname);
+        return file.exists();
     }
 }

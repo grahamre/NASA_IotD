@@ -18,20 +18,38 @@
         android:textColor="@color/white"
         android:textSize="15sp" />
 
+    <TextView
+        android:id="@+id/imageTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="test"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
+
     <ImageButton
         android:id="@+id/imageOfTheDay"
         android:layout_width="match_parent"
         android:layout_height="400dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="0dp"
         android:scaleType="fitStart"
         android:backgroundTint="@color/black"
         android:src="@drawable/nasa_image"/>
 
+    <Button
+        android:id="@+id/hdButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="View HD Image" />
+
     <ProgressBar
         android:id="@+id/progressBar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="10dp"
         android:layout_marginTop="00dp"
         android:visibility="invisible" />
+
+
 
 </LinearLayout>

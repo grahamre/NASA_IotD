@@ -49,8 +49,8 @@ public class MainActivity extends AppCompatActivity {
 
         /** Image of the day activity is activated */
         enterBtn.setOnClickListener( (click) -> {
-            Intent imageOfaTheDay = new Intent(MainActivity.this, ImageOfTheDay.class);
-            startActivity(imageOfaTheDay);
+            Intent imageOfTheDay = new Intent(MainActivity.this, ImageOfTheDay.class);
+            startActivity(imageOfTheDay);
         });
 
         /** clicking this button will activate the activity that contains list view of images */

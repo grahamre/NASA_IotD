@@ -10,6 +10,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.AnimationDrawable;
 import android.media.Image;
 import android.net.Uri;
 import android.os.AsyncTask;
@@ -42,8 +43,7 @@ import java.util.Date;
 
 public class ImageOfTheDay extends AppCompatActivity {
 
-    // This is our NASA API key:
-    // VV3DcWE3AbEdOJQqg6ROHRbFU6p9dRrDlM4ngREj
+    // This is our NASA API key: VV3DcWE3AbEdOJQqg6ROHRbFU6p9dRrDlM4ngREj
 
     // Formatter for appending date to API URL.
     private static final SimpleDateFormat FORMATTER = new SimpleDateFormat("yyyy-MM-dd");
@@ -76,7 +76,7 @@ public class ImageOfTheDay extends AppCompatActivity {
         // This button opens the image's HD URL on the device's default browser.
         Button hdButton = findViewById(R.id.hdButtonIotD);
         hdButton.setOnClickListener( (click) -> {
-//             Make this open a browser using the imageHDURL.
+             // Make this open a browser using the imageHDURL.
         });
 
         // This button opens a date picker allowing users to choose an image by date.
@@ -102,7 +102,7 @@ public class ImageOfTheDay extends AppCompatActivity {
 
                 // Update welcome message
                 // *************** translate **********
-                welcomeTextIotD.setText("Oh the memories!");
+                welcomeTextIotD.setText("A blast from the past.");
 
             }, year, month, day);
             datePicker.show();
@@ -118,10 +118,10 @@ public class ImageOfTheDay extends AppCompatActivity {
         downloadProgress.setVisibility(View.VISIBLE);
     }
 
-    public boolean fileExists(String fname){
-        File file = getBaseContext().getFileStreamPath(fname);
-        return file.exists();
-    }
+//    public boolean fileExists(String fname){
+//        File file = getBaseContext().getFileStreamPath(fname);
+//        return file.exists();
+//    }
 
     private class NASAImageQuery extends AsyncTask<String, Integer, String> {
 

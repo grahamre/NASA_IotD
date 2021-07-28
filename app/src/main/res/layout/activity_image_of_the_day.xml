@@ -8,6 +8,14 @@
     android:background="@color/black"
     tools:context=".ImageOfTheDay">
 
+<!--    <ImageView-->
+<!--        android:id="@+id/background"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:src="@drawable/frame_000"-->
+<!--        android:scaleType="centerInside" />-->
+
     <TextView
         android:id="@+id/welcomeTextIotD"
         android:layout_width="match_parent"
@@ -43,7 +51,7 @@
         android:layout_height="350dp"
         android:layout_below="@+id/dateIotD"
         android:scaleType="centerInside"
-        android:backgroundTint="@color/black"
+        android:backgroundTint="#ff000000"
         android:src="@drawable/nasa_image"/>
 
     <ProgressBar

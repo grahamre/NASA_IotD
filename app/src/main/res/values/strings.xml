@@ -12,4 +12,9 @@
     <!--Image of the Day Activity-->
     <string name="hdButtonText">View in HD</string>
     <string name="welcomeTextIotD">Hey there %1$s, check out today\'s pic from NASA!</string>
+
+    <!-- For Toolbar -->
+    <string name="open" translatable="false">open</string>
+    <string name="close" translatable="false">close</string>
+
 </resources>

@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ImageList">
+    <include layout="@layout/toolbar_navigation_bar" />
 
     <ListView
         android:id="@+id/picList"
@@ -17,5 +18,6 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:text="@string/back"/>
+
 
 </RelativeLayout>

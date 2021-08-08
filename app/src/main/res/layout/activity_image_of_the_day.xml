@@ -63,6 +63,8 @@
         android:layout_margin="100dp"
         android:visibility="invisible" />
 
+    <include layout="@layout/toolbar_navigation_bar" />
+
     <LinearLayout
         android:id="@+id/buttonsIotD"
         android:layout_width="match_parent"

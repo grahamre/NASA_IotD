@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" >
+
+    <item
+        android:id="@+id/choice1"
+        android:title="Homepage"
+        android:icon="@drawable/home"
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/choice2"
+        android:title="Saved Images"
+        android:icon="@drawable/gallery"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/choice3"
+        android:title="ImageOfTheDay"
+        android:icon="@drawable/picture"
+        app:showAsAction="always" />
+
+</menu>

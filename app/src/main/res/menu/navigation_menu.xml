@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/home"
+        android:title="Home Page"
+        android:icon="@drawable/home"
+        app:showAsAction="ifRoom"/>
+
+    <item android:id="@+id/pictureList"
+        android:title="Picture Gallery"
+        android:icon="@drawable/gallery"
+        app:showAsAction="ifRoom"/>
+
+    <item android:id="@+id/iotd"
+        android:title="Image of the Day"
+        android:icon="@drawable/picture"
+        app:showAsAction="ifRoom"/>
+
+</menu>

@@ -6,10 +6,10 @@ CST2335 - 450
 
 ### Requirements
 
-1.  The project must have a ListView somewhere to present items. Selecting an item from the 
+(Graham work) 1.  The project must have a ListView somewhere to present items. Selecting an item from the 
     ListView must show detailed information about the item selected.
 
-X 2.  The project must have at least 1 progress bar and at least 1 button.
+DONE [2.  The project must have at least 1 progress bar and at least 1 button.]
 
 3.  The project must have at least 1 edit text with appropriate text input method and at least 1 
     Toast and 1 Snackbar.
@@ -18,7 +18,7 @@ X 2.  The project must have at least 1 progress bar and at least 1 button.
     selecting a graphical icon from a Toolbar, and NavigationDrawer. The top navigation 
     layout should have the Activity’s title, and a version number.
 
-5.  The project must use a fragment somewhere in its graphical interface.
+(Graham work) 5.  The project must use a fragment somewhere in its graphical interface.
 
 6.  Each activity must have a help menu item that displays an AlertDialog with instructions for 
     how to use the interface.
@@ -26,11 +26,11 @@ X 2.  The project must have at least 1 progress bar and at least 1 button.
 7.  There must be at least 1 other language supported by your Activity. Please use Canadian French 
     as the secondary language if you do not you know a language other than English.
 
-8.  The items listed in the ListView must be stored by the application so that they appear the next 
+(Graham work) 8.  The items listed in the ListView must be stored by the application so that they appear the next 
     time the application is launched. The user must be able to add and delete items, 
     which would then also be stored in a database.
 
-9.  When retrieving data from an http server, the activity must use an AsyncTask.
+DONE [9.  When retrieving data from an http server, the activity must use an AsyncTask.]
 
 10. The project must use SharedPreferences to save something about the application for use the next 
     time the application is launched.

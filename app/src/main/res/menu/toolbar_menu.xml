@@ -20,4 +20,10 @@
         android:icon="@drawable/picture"
         app:showAsAction="always" />
 
+    <item
+        android:id="@+id/choice4"
+        android:title="Help"
+        android:icon="@drawable/help"
+        app:showAsAction="ifRoom"/>
+
 </menu>

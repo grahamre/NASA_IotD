@@ -1,6 +1,7 @@
 package com.example.nasaiotd;
 
 import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -259,6 +260,19 @@ public class ImageOfTheDay extends AppCompatActivity {
                 intent = new Intent(this, ImageOfTheDay.class);
                 startActivity(intent);
                 break;
+            case R.id.choice4:
+                /** Alert Dialogue goes here for help (instructions) */
+                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+                alertDialogBuilder.setTitle("Instructions for Home Page")
+                        //what is the message
+                        .setMessage("This is the Home Page of the app. " +
+                                "\n 1. You can enter your name in the space provided." +
+                                "\n 2. To enter the app, click the Enter the App Button" +
+                                "\n 3. To Access your saved images, click the Access your saved images button.") //gives the position of the row selected
+                        .setPositiveButton("Ok", (click, arg) -> {
+                        })
+                        .create().show(); //creating the dialog
+                break;
         }
         return true;
     }
@@ -280,6 +294,19 @@ public class ImageOfTheDay extends AppCompatActivity {
                 startActivity(intent);
                 //setResult(500);
                 // finish();
+            case R.id.help:
+                /** Alert Dialogue goes here for help (instructions) */
+                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+                alertDialogBuilder.setTitle("Instructions for Home Page")
+                        //what is the message
+                        .setMessage("This is the Home Page of the app. " +
+                                "\n 1. You can enter your name in the space provided." +
+                                "\n 2. To enter the app, click the Enter the App Button" +
+                                "\n 3. To Access your saved images, click the Access your saved images button.") //gives the position of the row selected
+                        .setPositiveButton("Ok", (click, arg) -> {
+                        })
+                        .create().show(); //creating the dialog
+                break;
         }
         return false;
     }

@@ -8,14 +8,6 @@
     android:background="@color/black"
     tools:context=".ImageOfTheDay">
 
-<!--    <ImageView-->
-<!--        android:id="@+id/background"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_centerHorizontal="true"-->
-<!--        android:src="@drawable/frame_000"-->
-<!--        android:scaleType="centerInside" />-->
-
     <TextView
         android:id="@+id/welcomeTextIotD"
         android:layout_width="match_parent"
@@ -52,7 +44,7 @@
         android:layout_below="@+id/dateIotD"
         android:scaleType="centerInside"
         android:backgroundTint="#ff000000"
-        android:src="@drawable/nasa_image"/>
+        android:src="@drawable/nasa_image" />
 
     <ProgressBar
         android:id="@+id/progressBar"
@@ -82,7 +74,8 @@
             android:layout_marginHorizontal="5dp"
             android:layout_weight="1"
             android:textSize="10sp"
-            android:text="View in HD" />
+            android:text="View in HD"
+            tools:ignore="SmallSp" />
 
         <Button
             android:id="@+id/dateButtonIotD"
@@ -91,7 +84,8 @@
             android:layout_marginHorizontal="5dp"
             android:layout_weight="1"
             android:textSize="10sp"
-            android:text="Select Date" />
+            android:text="Select Date"
+            tools:ignore="SmallSp" />
 
         <Button
             android:id="@+id/saveButtonIotD"
@@ -100,7 +94,8 @@
             android:layout_marginHorizontal="5dp"
             android:layout_weight="1"
             android:textSize="10sp"
-            android:text="Save Image" />
+            android:text="Save Image"
+            tools:ignore="SmallSp" />
 
     </LinearLayout>
 

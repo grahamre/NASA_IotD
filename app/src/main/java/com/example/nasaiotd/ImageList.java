@@ -8,14 +8,24 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.google.android.material.navigation.NavigationView;
 
+import java.util.ArrayList;
+
 public class ImageList extends AppCompatActivity {
+
+    private ArrayList<SavedImage> savedImages = new ArrayList<>();
+    private SavedImagesAdapter savedImagesAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -126,4 +136,42 @@ public class ImageList extends AppCompatActivity {
         return false;
     }
     /** Toolbar Functions end */
+
+    /** Database handling */
+
+    /** ListView Adapter */
+    private class SavedImagesAdapter extends BaseAdapter {
+
+        @Override
+        public int getCount() {
+            return savedImages.size();
+        }
+
+        @Override
+        public SavedImage getItem(int position) {
+            return savedImages.get(position);
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+
+            View savedImageView = convertView;
+            LayoutInflater inflater = getLayoutInflater();
+
+            savedImageView = inflater.inflate(R.layout.saved_image_view, parent, false);
+            TextView savedImageTitle = savedImageView.findViewById(R.id.savedImageTitle);
+            savedImageTitle.setText(savedImages.get(position).getImageTitle());
+            TextView savedImageDate = savedImageView.findViewById(R.id.savedImageDate);
+            savedImageDate.setText(savedImages.get(position).getImageDate());
+
+            return savedImageView;
+        }
+
+        @Override
+        public long getItemId(int position) {
+            return getItem(position).getImageID();
+        }
+    }
+    /** ListView Adapter end */
 }
+

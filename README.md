@@ -9,7 +9,7 @@ CST2335 - 450
 1.  The project must have a ListView somewhere to present items. Selecting an item from the 
     ListView must show detailed information about the item selected.
 
-2.  The project must have at least 1 progress bar and at least 1 button.
+X 2.  The project must have at least 1 progress bar and at least 1 button.
 
 3.  The project must have at least 1 edit text with appropriate text input method and at least 1 
     Toast and 1 Snackbar.

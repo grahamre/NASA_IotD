@@ -58,7 +58,7 @@ public class ImageOfTheDay extends AppCompatActivity {
     private static final SimpleDateFormat FORMATTER = new SimpleDateFormat("yyyy-MM-dd");
     private NASAImageQuery req;
 
-    private String apiLink = "https://api.nasa.gov/planetary/apod?api_key=VV3DcWE3AbEdOJQqg6ROHRbFU6p9dRrDlM4ngREj&date=";
+    private final String apiLink = "https://api.nasa.gov/planetary/apod?api_key=VV3DcWE3AbEdOJQqg6ROHRbFU6p9dRrDlM4ngREj&date=";
     private String apiLinkDate;
     private String toastMessage;
     private String hdButtonLink;
@@ -67,6 +67,7 @@ public class ImageOfTheDay extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_image_of_the_day);
+
         /** Toolbar and Navigation Bar Code */
         Toolbar toolbar = findViewById(R.id.toolbar);
 

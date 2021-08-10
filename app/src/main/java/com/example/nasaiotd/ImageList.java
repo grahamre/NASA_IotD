@@ -219,12 +219,12 @@ public class ImageList extends AppCompatActivity {
             TextView savedImageDate = savedImageView.findViewById(R.id.savedImageDate);
             savedImageDate.setText(savedImages.get(position).getImageDate());
 
-            ImageButton deleteButton = findViewById(R.id.deleteButton);
-            deleteButton.setOnClickListener( (click) -> {
-                deleteImageFromDB(getItem(position));
-                savedImages.remove(position);
-                savedImagesAdapter.notifyDataSetChanged();
-            });
+//            ImageButton deleteButton = findViewById(R.id.deleteButton);
+//            deleteButton.setOnClickListener( (click) -> {
+//                deleteImageFromDB(getItem(position));
+//                savedImages.remove(position);
+//                savedImagesAdapter.notifyDataSetChanged();
+//            });
 
 
 

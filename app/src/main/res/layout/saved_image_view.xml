@@ -10,7 +10,6 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_toLeftOf="@+id/deleteButton"
         android:textAlignment="center" />
 
     <TextView
@@ -20,13 +19,5 @@
         android:layout_below="@+id/savedImageTitle"
         android:layout_alignParentLeft="true"
         android:textAlignment="center" />
-
-    <ImageButton
-        android:id="@+id/deleteButton"
-        android:layout_width="50px"
-        android:layout_height="50px"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:src="@drawable/delete"/>
 
 </RelativeLayout>

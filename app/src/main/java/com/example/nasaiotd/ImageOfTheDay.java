@@ -10,8 +10,10 @@ import androidx.fragment.app.DialogFragment;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.content.ComponentName;
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.AnimationDrawable;
@@ -52,21 +54,26 @@ import java.util.Date;
 
 public class ImageOfTheDay extends AppCompatActivity {
 
-    // This is our NASA API key: VV3DcWE3AbEdOJQqg6ROHRbFU6p9dRrDlM4ngREj
-
     // Formatter for appending date to API URL.
     private static final SimpleDateFormat FORMATTER = new SimpleDateFormat("yyyy-MM-dd");
     private NASAImageQuery req;
+    SQLiteDatabase db;
 
     private final String apiLink = "https://api.nasa.gov/planetary/apod?api_key=VV3DcWE3AbEdOJQqg6ROHRbFU6p9dRrDlM4ngREj&date=";
     private String apiLinkDate;
-    private String toastMessage;
-    private String hdButtonLink;
+
+    private String fileType;
+    private String title;
+    private String date;
+    private String description;
+    private String imageURL;
+    private String imageHDURL;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_image_of_the_day);
+
 
         /** Toolbar and Navigation Bar Code */
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -89,17 +96,18 @@ public class ImageOfTheDay extends AppCompatActivity {
 
         TextView welcomeTextIotD = findViewById(R.id.welcomeTextIotD);
 
-        ImageButton imageOfTheDay = findViewById(R.id.imageOfTheDay);
-
         // Clicking on the image button will summon a toast with info pertaining to the image.
+        ImageButton imageOfTheDay = findViewById(R.id.imageOfTheDay);
         imageOfTheDay.setOnClickListener( (click) -> {
-                Toast.makeText(ImageOfTheDay.this, toastMessage, Toast.LENGTH_LONG).show();
+            Toast.makeText(ImageOfTheDay.this, description, Toast.LENGTH_LONG).show();
         });
 
         // This button opens the image's HD URL on the device's default browser.
         Button hdButton = findViewById(R.id.hdButtonIotD);
         hdButton.setOnClickListener( (click) -> {
-             // Make this open a browser using the imageHDURL.
+            Uri uri = Uri.parse(imageHDURL);
+            Intent openBrowser = new Intent(Intent.ACTION_VIEW, uri);
+            startActivity(openBrowser);
         });
 
         // This button opens a date picker allowing users to choose an image by date.
@@ -125,7 +133,7 @@ public class ImageOfTheDay extends AppCompatActivity {
 
                 // Update welcome message
                 // *************** translate **********
-                welcomeTextIotD.setText("A blast from the past.");
+                welcomeTextIotD.setText("On this day...");
 
             }, year, month, day);
             datePicker.show();
@@ -134,7 +142,25 @@ public class ImageOfTheDay extends AppCompatActivity {
         // This button saves the current image, adding it to the list view.
         Button saveButton = findViewById(R.id.saveButtonIotD);
         saveButton.setOnClickListener( (click) -> {
-            // Add image to ListView
+            if (fileType.equals("image")) {
+                // Add to the DB and get new ID
+                ContentValues newRowValues = new ContentValues();
+                newRowValues.put(ImageDBOpener.COL_TITLE, title);
+                newRowValues.put(ImageDBOpener.COL_DATE, date);
+                newRowValues.put(ImageDBOpener.COL_DESCRIPTION, description);
+                newRowValues.put(ImageDBOpener.COL_URL, imageURL);
+                newRowValues.put(ImageDBOpener.COL_HDURL, imageHDURL);
+
+                // Get DB connection and insert new values.
+                ImageDBOpener imageDBOpener = new ImageDBOpener(this);
+                db = imageDBOpener.getWritableDatabase();
+                db.insert(ImageDBOpener.TABLE_NAME, null, newRowValues);
+
+                // Verify that the image has been saved
+                Toast.makeText(ImageOfTheDay.this, R.string.saveConfirm, Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(ImageOfTheDay.this, R.string.saveDeny, Toast.LENGTH_SHORT).show();
+            }
         });
 
         ProgressBar downloadProgress = findViewById(R.id.progressBar);
@@ -148,7 +174,6 @@ public class ImageOfTheDay extends AppCompatActivity {
 
     private class NASAImageQuery extends AsyncTask<String, Integer, String> {
 
-        String date, explanation, imageHDURL, title, imageURL;
         Bitmap nasaImage;
 
         ProgressBar downloadProgress = findViewById(R.id.progressBar);
@@ -173,23 +198,19 @@ public class ImageOfTheDay extends AppCompatActivity {
                 // convert string to JSON:
                 JSONObject nasaImageData = new JSONObject(result);
 
-                // Pull API data.
-                date = nasaImageData.getString("date");
-                explanation = nasaImageData.getString("explanation");
-                imageHDURL = nasaImageData.getString("hdurl");
-                title = nasaImageData.getString("title");
+                fileType = null;
+                fileType = nasaImageData.getString("media_type");
                 imageURL = nasaImageData.getString("url");
+                date = nasaImageData.getString("date");
 
-                // get image
-//                if (fileExists(imageURL)) {
-//                    FileInputStream fis = null;
-//                    try {
-//                        fis = openFileInput(imageURL);
-//                    }
-//                    catch (FileNotFoundException e) {    e.printStackTrace();  }
-//                    nasaImage = BitmapFactory.decodeStream(fis);
-//
-//                } else {
+                // Handle non-images.
+                if (fileType.equals("image")) {
+                    // Pull API data.
+                    title = nasaImageData.getString("title");
+                    description = nasaImageData.getString("explanation");
+                    imageHDURL = nasaImageData.getString("hdurl");
+
+                    // get image
                     nasaImage = null;
                     url = new URL(imageURL);
                     urlConnection = (HttpURLConnection) url.openConnection();
@@ -203,7 +224,12 @@ public class ImageOfTheDay extends AppCompatActivity {
                     outputStream.flush();
                     outputStream.close();
                     publishProgress(100);
-//                }
+                } else {
+                    title = "No image this time.";
+                    description = "meow";
+                    imageHDURL = "";
+                    nasaImage = BitmapFactory.decodeResource(getBaseContext().getResources(), R.drawable.nasa_image);
+                }
             } catch (Exception e) {
                 Log.e("Error accessing API", e.getMessage());
             }
@@ -228,8 +254,6 @@ public class ImageOfTheDay extends AppCompatActivity {
             TextView dateIotD = findViewById(R.id.dateIotD);
             dateIotD.setText("(" + date + ")");
 
-            toastMessage = explanation;
-            hdButtonLink = imageHDURL;
             downloadProgress.setVisibility(View.INVISIBLE);
         }
     }

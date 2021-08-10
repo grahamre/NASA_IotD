@@ -25,7 +25,7 @@ public class ImageDBOpener extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db)
     {
         db.execSQL("CREATE TABLE " + TABLE_NAME + "("
-                + COL_ID + "INTEGER PRIMARY KEY AUTOINCREMENT, "
+                + COL_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + COL_TITLE + " TEXT,"
                 + COL_DATE  + " TEXT,"
                 + COL_DESCRIPTION + " TEXT,"

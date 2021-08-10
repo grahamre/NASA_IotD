@@ -43,8 +43,7 @@
         android:layout_height="350dp"
         android:layout_below="@+id/dateIotD"
         android:scaleType="centerInside"
-        android:backgroundTint="#ff000000"
-        android:src="@drawable/nasa_image" />
+        android:backgroundTint="#ff000000" />
 
     <ProgressBar
         android:id="@+id/progressBar"

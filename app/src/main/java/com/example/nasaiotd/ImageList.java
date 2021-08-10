@@ -18,6 +18,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -217,6 +218,15 @@ public class ImageList extends AppCompatActivity {
             savedImageTitle.setText(savedImages.get(position).getImageTitle());
             TextView savedImageDate = savedImageView.findViewById(R.id.savedImageDate);
             savedImageDate.setText(savedImages.get(position).getImageDate());
+
+            ImageButton deleteButton = findViewById(R.id.deleteButton);
+            deleteButton.setOnClickListener( (click) -> {
+                deleteImageFromDB(getItem(position));
+                savedImages.remove(position);
+                savedImagesAdapter.notifyDataSetChanged();
+            });
+
+
 
             return savedImageView;
         }

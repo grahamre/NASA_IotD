@@ -2,6 +2,9 @@ package com.example.nasaiotd;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AlertDialog;
+
+import android.graphics.Typeface;
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.content.Intent;
 import android.view.Menu;
@@ -10,46 +13,38 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.res.ResourcesCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
 
-/*
-Milestone 2 -   July 26th 11:59PM (Optional): Both team member submits a pdf. The Github repository
-                needs to have a branch called milestone_2 containing the code for milestone_2.
-
-    Milestone number and date  	Requirements implemented 	  Bonus Marks available
-    2) July 26th                    4, 6, 7, 9, 11, 13            5
-
-    4.  The software must have at least 4 or more activities. Your activity must be accessible by
-    selecting a graphical icon from a Toolbar, and NavigationDrawer. The top navigation
-    layout should have the Activity’s title, and a version number.
-
-    6.  Each activity must have a help menu item that displays an AlertDialog with instructions for
-    how to use the interface.
-
-    7.  There must be at least 1 other language supported by your Activity. Please use Canadian French
-    as the secondary language if you do not you know a language other than English.
-
-    9.  When retrieving data from an http server, the activity must use an AsyncTask.
-
-    11. All activities must be integrated into a single working application, on a single emulator, and
-    must be uploaded to GitHub.
-
-    13. The functions and variables you write must be properly documented using JavaDoc comments.
- */
-
 public class MainActivity extends AppCompatActivity {
+
+    AnimationDrawable logoAnimation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Typeface exo = ResourcesCompat.getFont(this, R.font.exo);
+
+        TextView welcomeText = findViewById(R.id.welcomeTxt);
+        welcomeText.setTypeface(exo);
+
+        // Run animation for logo
+        ImageView logo = findViewById(R.id.logoImage);
+        logoAnimation = (AnimationDrawable) logo.getDrawable();
+        logoAnimation.setCallback(logo);
+        logoAnimation.setVisible(true, true);
+        logo.post(new MainActivity.Starter());
 
         /** Toolbar and Navigation Bar Code */
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -177,4 +172,10 @@ public class MainActivity extends AppCompatActivity {
         return false;
     }
     /** Toolbar Functions end */
+
+    class Starter implements Runnable {
+        public void run() {
+            logoAnimation.start();
+        }
+    }
 }

@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_centerHorizontal="true"
-        android:src="@drawable/splash_animation"
+        android:src="@drawable/gal_animation"
         android:scaleType="fitXY" />
     <TextView
         android:id="@+id/bigTitle"
@@ -21,7 +21,7 @@
         android:layout_marginTop="200dp"
         android:text="NASA Image of the Day"
         android:textAlignment="center"
-        android:textColor="@color/white"
+        android:textColor="#F5E8C7"
         android:fontFamily="sans-serif-smallcaps"
         android:textSize="25sp" />
 
@@ -32,7 +32,7 @@
         android:layout_below="@+id/bigTitle"
         android:text="by A. Patel &amp; G. Everitt"
         android:textAlignment="center"
-        android:textColor="@color/white"
+        android:textColor="#F5E8C7"
         android:fontFamily="sans-serif-smallcaps"
         android:textSize="15sp" />
 
@@ -43,7 +43,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="40dp"
         android:layout_centerHorizontal="true"
-        android:textColor="@color/white"
+        android:textColor="#F5E8C7"
         style="@style/Widget.MaterialComponents.Button.TextButton"
         android:text="Enter" />
 

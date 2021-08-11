@@ -28,14 +28,18 @@ public class TitlePage extends AppCompatActivity {
         bgAnimation.setVisible(true, true);
         background.post(new Starter());
 
+        Typeface exo = ResourcesCompat.getFont(this, R.font.exo);
+
         TextView bigTitle = findViewById(R.id.bigTitle);
-        Typeface typeface = ResourcesCompat.getFont(this, R.font.exo);
-        bigTitle.setTypeface(typeface);
+        bigTitle.setTypeface(exo);
+        TextView byline = findViewById(R.id.byline);
+        byline.setTypeface(exo);
 
         Button enterButton = findViewById(R.id.enterButton);
         enterButton.setOnClickListener((click) -> {
             Intent enterApp = new Intent(TitlePage.this, MainActivity.class);
             startActivity(enterApp);
+            bgAnimation.stop();
         });
     }
 

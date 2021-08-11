@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#161522"
     tools:context=".ImageList">
 
     <include layout="@layout/toolbar_navigation_bar" />

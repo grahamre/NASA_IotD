@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <resources>
-    <string name="app_name">NASA Image of the Day</string>
+    <string name="app_name">IodD</string>
     <string name="welcomeText">Welcome to the NASA Image Of The Day App</string>
     <string name="enter">Enter The App</string>
     <string name="back">Go Back To Homepage</string>

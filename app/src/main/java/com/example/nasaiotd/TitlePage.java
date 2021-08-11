@@ -1,12 +1,15 @@
 package com.example.nasaiotd;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.res.ResourcesCompat;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 public class TitlePage extends AppCompatActivity {
 
@@ -24,6 +27,10 @@ public class TitlePage extends AppCompatActivity {
         bgAnimation.setCallback(background);
         bgAnimation.setVisible(true, true);
         background.post(new Starter());
+
+        TextView bigTitle = findViewById(R.id.bigTitle);
+        Typeface typeface = ResourcesCompat.getFont(this, R.font.exo);
+        bigTitle.setTypeface(typeface);
 
         Button enterButton = findViewById(R.id.enterButton);
         enterButton.setOnClickListener((click) -> {

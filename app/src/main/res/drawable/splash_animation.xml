@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:oneshot="false">
+
+    <item android:drawable="@drawable/frame_000" android:duration="70"/>
+    <item android:drawable="@drawable/frame_004" android:duration="70"/>
+    <item android:drawable="@drawable/frame_008" android:duration="70"/>
+    <item android:drawable="@drawable/frame_012" android:duration="70"/>
+    <item android:drawable="@drawable/frame_016" android:duration="70"/>
+    <item android:drawable="@drawable/frame_020" android:duration="70"/>
+    <item android:drawable="@drawable/frame_024" android:duration="70"/>
+    <item android:drawable="@drawable/frame_028" android:duration="70"/>
+    <item android:drawable="@drawable/frame_032" android:duration="70"/>
+    <item android:drawable="@drawable/frame_036" android:duration="70"/>
+    <item android:drawable="@drawable/frame_040" android:duration="70"/>
+    <item android:drawable="@drawable/frame_044" android:duration="70"/>
+    <item android:drawable="@drawable/frame_048" android:duration="70"/>
+    <item android:drawable="@drawable/frame_052" android:duration="70"/>
+    <item android:drawable="@drawable/frame_056" android:duration="70"/>
+    <item android:drawable="@drawable/frame_060" android:duration="70"/>
+    <item android:drawable="@drawable/frame_064" android:duration="70"/>
+    <item android:drawable="@drawable/frame_068" android:duration="70"/>
+    <item android:drawable="@drawable/frame_072" android:duration="70"/>
+    <item android:drawable="@drawable/frame_076" android:duration="70"/>
+    <item android:drawable="@drawable/frame_080" android:duration="70"/>
+    <item android:drawable="@drawable/frame_084" android:duration="70"/>
+    <item android:drawable="@drawable/frame_088" android:duration="70"/>
+    <item android:drawable="@drawable/frame_092" android:duration="70"/>
+    <item android:drawable="@drawable/frame_096" android:duration="70"/>
+    <item android:drawable="@drawable/frame_100" android:duration="70"/>
+    <item android:drawable="@drawable/frame_104" android:duration="70"/>
+    <item android:drawable="@drawable/frame_108" android:duration="70"/>
+    <item android:drawable="@drawable/frame_112" android:duration="70"/>
+    <item android:drawable="@drawable/frame_116" android:duration="70"/>
+    <item android:drawable="@drawable/frame_119" android:duration="70"/>
+
+</animation-list>

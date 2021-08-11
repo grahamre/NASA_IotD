@@ -40,6 +40,7 @@ public class TitlePage extends AppCompatActivity {
             Intent enterApp = new Intent(TitlePage.this, MainActivity.class);
             startActivity(enterApp);
             bgAnimation.stop();
+            overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
         });
     }
 

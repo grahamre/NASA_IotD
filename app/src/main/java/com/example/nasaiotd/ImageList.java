@@ -16,6 +16,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -69,6 +70,23 @@ public class ImageList extends AppCompatActivity {
         goBack.setOnClickListener( (click) -> {
             Intent homepage = new Intent(ImageList.this, MainActivity.class);
             startActivity(homepage);
+        });
+
+        /** Deleting A saved Image */
+        picList.setOnItemLongClickListener((AdapterView<?> p, View v, int position, long id) -> {
+            SavedImage svdImg = savedImages.get(position);
+            String title = svdImg.getImageTitle();
+            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+            alertDialogBuilder.setTitle("Do you want to delete this image?")
+                .setMessage("Title:" + title)
+                .setPositiveButton("Yes", (click, arg) -> {
+                    picList.removeViewInLayout(v);
+                    deleteImageFromDB(svdImg);
+                    savedImages.remove(position);
+                    savedImagesAdapter.notifyDataSetChanged();
+                })
+                .create().show();
+            return true;
         });
 
         /** Creating a bundle for Fragment section */
@@ -235,15 +253,6 @@ public class ImageList extends AppCompatActivity {
             savedImageTitle.setText(savedImages.get(position).getImageTitle());
             TextView savedImageDate = savedImageView.findViewById(R.id.savedImageDate);
             savedImageDate.setText(savedImages.get(position).getImageDate());
-
-//            ImageButton deleteButton = findViewById(R.id.deleteButton);
-//            deleteButton.setOnClickListener( (click) -> {
-//                deleteImageFromDB(getItem(position));
-//                savedImages.remove(position);
-//                savedImagesAdapter.notifyDataSetChanged();
-//            });
-
-
 
             return savedImageView;
         }

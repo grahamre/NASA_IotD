@@ -6,25 +6,25 @@ CST2335 - 450
 
 ### Requirements
 
-1.  The project must have a ListView somewhere to present items. Selecting an item from the 
-    ListView must show detailed information about the item selected.
+DONE [1.  The project must have a ListView somewhere to present items. Selecting an item from the 
+    ListView must show detailed information about the item selected.]
 
 DONE [2.  The project must have at least 1 progress bar and at least 1 button.]
 
 DONE [3.  The project must have at least 1 edit text with appropriate text input method and at least 1 
     Toast and 1 Snackbar.]
 
-4.  The software must have at least 4 or more activities. Your activity must be accessible by 
+(ONLY ONE LEFT) 4.  The software must have at least 4 or more activities. Your activity must be accessible by 
     selecting a graphical icon from a Toolbar, and NavigationDrawer. The top navigation 
     layout should have the Activity’s title, and a version number.
 
-(Ari work) 5.  The project must use a fragment somewhere in its graphical interface.
+DONE (Except App keeps crashing when loading Image) [5.  The project must use a fragment somewhere in its graphical interface.]
 
-6.  Each activity must have a help menu item that displays an AlertDialog with instructions for 
-    how to use the interface.
+DONE [6.  Each activity must have a help menu item that displays an AlertDialog with instructions for 
+    how to use the interface.]
 
-7.  There must be at least 1 other language supported by your Activity. Please use Canadian French 
-    as the secondary language if you do not you know a language other than English.
+(Will Finish this up Tomorrow) [7.  There must be at least 1 other language supported by your Activity. Please use Canadian French 
+    as the secondary language if you do not you know a language other than English.]
 
 DONE (except for delete) [8.  The items listed in the ListView must be stored by the application so that they appear the next 
     time the application is launched. The user must be able to add and delete items, 

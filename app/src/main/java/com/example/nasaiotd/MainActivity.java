@@ -36,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
     public static final String PREFERENCES = "MyPreference";
     public static final String USERNAME = "usrName";
 
+    private String name;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,6 +54,10 @@ public class MainActivity extends AppCompatActivity {
         logoAnimation.setCallback(logo);
         logoAnimation.setVisible(true, true);
         logo.post(new MainActivity.Starter());
+
+        // Get name from user
+        EditText yourName = findViewById(R.id.yourName);
+        name = yourName.getText().toString();
 
         /** Toolbar and Navigation Bar Code */
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -81,7 +87,9 @@ public class MainActivity extends AppCompatActivity {
 
         /** Image of the day activity is activated */
         enterBtn.setOnClickListener( (click) -> {
+            name = yourName.getText().toString();
             Intent imageOfTheDay = new Intent(MainActivity.this, ImageOfTheDay.class);
+            imageOfTheDay.putExtra("name", name);
             startActivity(imageOfTheDay);
         });
 

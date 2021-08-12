@@ -69,11 +69,15 @@ public class ImageOfTheDay extends AppCompatActivity {
     private String imageURL;
     private String imageHDURL;
 
+    private String name;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_image_of_the_day);
 
+        Intent intent = getIntent();
+        name = intent.getStringExtra("name");
 
         /** Toolbar and Navigation Bar Code */
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -95,6 +99,9 @@ public class ImageOfTheDay extends AppCompatActivity {
         req.execute(apiLink + apiLinkDate);
 
         TextView welcomeTextIotD = findViewById(R.id.welcomeTextIotD);
+        String namePasser = getResources().getString(R.string.welcomeTextIotD, name);
+        welcomeTextIotD.setText(namePasser);
+
 
         // Clicking on the image button will summon a toast with info pertaining to the image.
         ImageButton imageOfTheDay = findViewById(R.id.imageOfTheDay);

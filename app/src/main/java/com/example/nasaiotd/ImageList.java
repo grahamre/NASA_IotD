@@ -135,12 +135,11 @@ public class ImageList extends AppCompatActivity {
             case R.id.choice4:
                 /** Alert Dialogue goes here for help (instructions) */
                 AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
-                alertDialogBuilder.setTitle("Instructions for Home Page")
-                        //what is the message
-                        .setMessage("This is the Home Page of the app. " +
-                                "\n 1. You can enter your name in the space provided." +
-                                "\n 2. To enter the app, click the Enter the App Button" +
-                                "\n 3. To Access your saved images, click the Access your saved images button.") //gives the position of the row selected
+                alertDialogBuilder.setTitle("Instructions for Saved Images Page")
+                        .setMessage("Gallery of all the Saved Images " +
+                                "\n 1. You can click on any image to see details about the image, such as Title, Date, and Image." +
+                                "\n 2. To delete the image, Hold your click on an image and Dialogue will pop up to prompt the delete action." +
+                                "\n 3. You can click GO TO HOMEPAGE Button to bring yourself back to Home Page" )
                         .setPositiveButton("Ok", (click, arg) -> {
                         })
                         .create().show(); //creating the dialog
@@ -169,12 +168,11 @@ public class ImageList extends AppCompatActivity {
             case R.id.help:
                 /** Alert Dialogue goes here for help (instructions) */
                 AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
-                alertDialogBuilder.setTitle("Instructions for Home Page")
-                        //what is the message
-                        .setMessage("This is the Home Page of the app. " +
-                                "\n 1. You can enter your name in the space provided." +
-                                "\n 2. To enter the app, click the Enter the App Button" +
-                                "\n 3. To Access your saved images, click the Access your saved images button.") //gives the position of the row selected
+                alertDialogBuilder.setTitle("Instructions for Saved Images Page")
+                        .setMessage("Gallery of all the Saved Images " +
+                                "\n 1. You can click on any image to see details about the image, such as Title, Date, and Image." +
+                                "\n 2. To delete the image, Hold your click on an image and Dialogue will pop up to prompt the delete action." +
+                                "\n 3. You can click GO TO HOMEPAGE Button to bring yourself back to Home Page" )
                         .setPositiveButton("Ok", (click, arg) -> {
                         })
                         .create().show(); //creating the dialog

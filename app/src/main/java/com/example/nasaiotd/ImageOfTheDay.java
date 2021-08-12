@@ -295,15 +295,15 @@ public class ImageOfTheDay extends AppCompatActivity {
             case R.id.choice4:
                 /** Alert Dialogue goes here for help (instructions) */
                 AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
-                alertDialogBuilder.setTitle("Instructions for Home Page")
-                        //what is the message
-                        .setMessage("This is the Home Page of the app. " +
-                                "\n 1. You can enter your name in the space provided." +
-                                "\n 2. To enter the app, click the Enter the App Button" +
-                                "\n 3. To Access your saved images, click the Access your saved images button.") //gives the position of the row selected
+                alertDialogBuilder.setTitle("Instructions for Image Of The Day Page")
+                        .setMessage("This is the Image Of The Day Page. " +
+                                "\n 1. Here you can see the current Image of the day based on the date." +
+                                "\n 2. In order to see previous Image of the days, You can click SELECT DATE button to select a previous date. " +
+                                "\n 3. To save an Image you like, when your Image is displayed, you can click SAVE IMAGE button. Your Image will be saved in Gallery." +
+                                "\n 4. If you want to see the Image in HD then you can click VIEW IN HD button and it will open up browser to view the image.")
                         .setPositiveButton("Ok", (click, arg) -> {
                         })
-                        .create().show(); //creating the dialog
+                        .create().show(); //creating the dialogue
                 break;
         }
         return true;
@@ -329,12 +329,12 @@ public class ImageOfTheDay extends AppCompatActivity {
             case R.id.help:
                 /** Alert Dialogue goes here for help (instructions) */
                 AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
-                alertDialogBuilder.setTitle("Instructions for Home Page")
-                        //what is the message
-                        .setMessage("This is the Home Page of the app. " +
-                                "\n 1. You can enter your name in the space provided." +
-                                "\n 2. To enter the app, click the Enter the App Button" +
-                                "\n 3. To Access your saved images, click the Access your saved images button.") //gives the position of the row selected
+                alertDialogBuilder.setTitle("Instructions for Image Of The Day Page")
+                        .setMessage("This is the Image Of The Day Page. " +
+                                "\n 1. Here you can see the current Image of the day based on the date." +
+                                "\n 2. In order to see previous Image of the days, You can click SELECT DATE button to select a previous date. " +
+                                "\n 3. To save an Image you like, when your Image is displayed, you can click SAVE IMAGE button. Your Image will be saved in Gallery." +
+                                "\n 4. If you want to see the Image in HD then you can click VIEW IN HD button and it will open up browser to view the image.")
                         .setPositiveButton("Ok", (click, arg) -> {
                         })
                         .create().show(); //creating the dialog

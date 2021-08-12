@@ -27,7 +27,6 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
 
-import java.util.prefs.Preferences;
 
 public class MainActivity extends AppCompatActivity {
 

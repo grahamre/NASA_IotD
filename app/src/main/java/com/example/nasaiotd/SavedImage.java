@@ -1,5 +1,7 @@
 package com.example.nasaiotd;
 
+import android.graphics.Bitmap;
+
 public class SavedImage {
 
     private long imageID;
@@ -8,6 +10,7 @@ public class SavedImage {
     private String imageDescription;
     private String imageURL;
     private String imageHDURL;
+   // private Bitmap image;
 
     public SavedImage(long imageID, String imageTitle, String imageDate, String imageDescription, String imageURL, String imageHDURL) {
         this.imageID = imageID;
@@ -16,6 +19,7 @@ public class SavedImage {
         this.imageDescription = imageDescription;
         this.imageURL = imageURL;
         this.imageHDURL = imageHDURL;
+        //this.image = image;
     }
 
     public long getImageID() {
@@ -36,4 +40,5 @@ public class SavedImage {
     public String getImageHDURL() {
         return imageHDURL;
     }
+    // public Bitmap getImage() { return image; }
 }

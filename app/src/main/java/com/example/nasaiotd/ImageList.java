@@ -33,6 +33,9 @@ public class ImageList extends AppCompatActivity {
     private SavedImagesAdapter savedImagesAdapter;
     SQLiteDatabase db;
 
+    /** Fragment */
+    DetailsFragment fragment;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,6 +69,20 @@ public class ImageList extends AppCompatActivity {
         goBack.setOnClickListener( (click) -> {
             Intent homepage = new Intent(ImageList.this, MainActivity.class);
             startActivity(homepage);
+        });
+
+        /** Creating a bundle for Fragment section */
+        picList.setOnItemClickListener((list, view, position, id) -> {
+            //Bundle
+            Bundle dataToPass = new Bundle();
+            SavedImage svImg = savedImages.get(position);
+            dataToPass.putString("imageTitle", svImg.getImageTitle());
+            dataToPass.putString("imageDate", svImg.getImageDate());
+            dataToPass.putString("imageURL", svImg.getImageURL());
+            Intent nextActivity = new Intent(ImageList.this, EmptyActivity.class);
+            nextActivity.putExtras(dataToPass);
+            startActivity(nextActivity);
+
         });
 
     }

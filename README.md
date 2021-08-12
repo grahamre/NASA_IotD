@@ -26,7 +26,7 @@ DONE [6.  Each activity must have a help menu item that displays an AlertDialog 
 (Will Finish this up Tomorrow) [7.  There must be at least 1 other language supported by your Activity. Please use Canadian French 
     as the secondary language if you do not you know a language other than English.]
 
-DONE (except for delete) [8.  The items listed in the ListView must be stored by the application so that they appear the next 
+DONE [8.  The items listed in the ListView must be stored by the application so that they appear the next 
     time the application is launched. The user must be able to add and delete items, 
     which would then also be stored in a database.]
 

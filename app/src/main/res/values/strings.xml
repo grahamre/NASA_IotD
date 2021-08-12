@@ -11,7 +11,7 @@
 
     <!--Image of the Day Activity-->
     <string name="hdButtonText">View in HD</string>
-    <string name="welcomeTextIotD">Hey there %1$s, check out today\'s pic from NASA!</string>
+    <string name="welcomeTextIotD">Hey there "%s", check out today\'s pic from NASA!</string>
     <string name="saveConfirm">Saved</string>
     <string name="saveDeny">Cannot be saved</string>
 

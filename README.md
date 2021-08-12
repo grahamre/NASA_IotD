@@ -32,8 +32,9 @@ DONE (except for delete) [8.  The items listed in the ListView must be stored by
 
 DONE [9.  When retrieving data from an http server, the activity must use an AsyncTask.]
 
-10. The project must use SharedPreferences to save something about the application for use the next 
-    time the application is launched.
+DONE [10. The project must use SharedPreferences to save something about the application for use the next 
+    time the application is launched.]
+    
 
 [11. All activities must be integrated into a single working application, on a single emulator, and 
     must be uploaded to GitHub.]

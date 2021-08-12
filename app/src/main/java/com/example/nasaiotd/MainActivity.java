@@ -3,8 +3,10 @@ package com.example.nasaiotd;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AlertDialog;
 
+import android.content.Context;
 import android.graphics.Typeface;
 import android.graphics.drawable.AnimationDrawable;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.content.Intent;
 import android.view.Menu;
@@ -25,9 +27,14 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
 
+import java.util.prefs.Preferences;
+
 public class MainActivity extends AppCompatActivity {
 
     AnimationDrawable logoAnimation;
+    private EditText userName;
+    public static final String PREFERENCES = "MyPreference";
+    public static final String USERNAME = "usrName";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,8 +71,13 @@ public class MainActivity extends AppCompatActivity {
         Button enterBtn = findViewById(R.id.enterBtn);
         Button picBtn = findViewById(R.id.picBtn);
 
-        // This edit text will collect a name for saved preferences
-        EditText eee = findViewById(R.id.yourName);
+        /** This edit text will collect a name for saved preferences */
+        userName = (EditText) findViewById(R.id.yourName);
+
+        /** SharedPreferences to display previously entered name in the EditText */
+        SharedPreferences sharedPreferences = getSharedPreferences(PREFERENCES, Context.MODE_PRIVATE);
+        String usrName = sharedPreferences.getString(USERNAME, "");
+        userName.setText(usrName);
 
         /** Image of the day activity is activated */
         enterBtn.setOnClickListener( (click) -> {
@@ -91,6 +103,18 @@ public class MainActivity extends AppCompatActivity {
                         .show();
             }
         });
+    }
+
+    /** This function here will save the user name entered to SharedPreference */
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        //Saving User Name to SharedPreferences
+        SharedPreferences sharedPreferences = getSharedPreferences(PREFERENCES, Context.MODE_PRIVATE);
+        SharedPreferences.Editor preferenceEditor = sharedPreferences.edit();
+        preferenceEditor.putString(USERNAME, userName.getText().toString());
+        preferenceEditor.apply();
     }
     /** Toolbar Functions */
     @Override

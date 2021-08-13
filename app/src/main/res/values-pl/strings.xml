@@ -30,7 +30,9 @@
     <!-- For Toolbar -->
     <string name="open">otwarty</string>
     <string name="close">blisko</string>
-    <string name="navigation">Cześć!</string>
+    <string name="mainNav">Mile widziany! V1</string>
+    <string name="iotdNav">Obraz dzienny V1</string>
+    <string name="listNav">Zapisane obrazy V1</string>
 
     <!-- Fragment texts -->
     <string name="titleHereText">Tytuł tutaj</string>

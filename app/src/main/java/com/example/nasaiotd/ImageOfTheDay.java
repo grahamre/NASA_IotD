@@ -181,7 +181,7 @@ public class ImageOfTheDay extends AppCompatActivity {
 
     private class NASAImageQuery extends AsyncTask<String, Integer, String> {
 
-        Bitmap nasaImage;
+        private Bitmap nasaImage;
 
         ProgressBar downloadProgress = findViewById(R.id.progressBar);
 

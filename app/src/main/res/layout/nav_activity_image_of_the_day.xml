@@ -9,7 +9,8 @@
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        />
 
     <androidx.drawerlayout.widget.DrawerLayout
         android:id="@+id/drawer_layout"
@@ -23,14 +24,14 @@
             android:layout_height="match_parent" />
 
         <com.google.android.material.navigation.NavigationView
+            android:id="@+id/navigationView"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:background="@color/teal_200"
             android:layout_gravity="start"
+            android:background="#2B2E4A"
             android:fitsSystemWindows="true"
-            app:headerLayout="@layout/header_layout"
-            app:menu="@menu/navigation_menu"
-            android:id="@+id/navigationView"/>
+            app:headerLayout="@layout/iotd_header_layout"
+            app:menu="@menu/navigation_menu" />
     </androidx.drawerlayout.widget.DrawerLayout>
 
 </RelativeLayout>

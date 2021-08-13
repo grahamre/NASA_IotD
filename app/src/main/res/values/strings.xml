@@ -22,7 +22,7 @@
     <string name="hdButtonText">View in HD</string>
     <string name="selectDate">Select Date</string>
     <string name="saveButtonText">Save Image</string>
-    <string name="welcomeTextIotD">Hey there "%s", check out today\'s pic from NASA!</string>
+    <string name="welcomeTextIotD">Hey there %s, check out today\'s pic from NASA!</string>
     <string name="saveConfirm">Saved</string>
     <string name="saveDeny">Cannot be saved</string>
     <string name="dayText">On This Day...</string>
@@ -30,7 +30,9 @@
     <!-- For Toolbar -->
     <string name="open">open</string>
     <string name="close">close</string>
-    <string name="navigation">Hello!</string>
+    <string name="mainNav">Welcome!   V1</string>
+    <string name="iotdNav">Daily Image   V1</string>
+    <string name="listNav">Saved Images   V1</string>
 
     <!-- Fragment texts -->
     <string name="titleHereText">Title Here</string>

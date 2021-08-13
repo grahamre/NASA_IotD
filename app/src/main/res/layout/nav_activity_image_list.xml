@@ -25,10 +25,11 @@
         <com.google.android.material.navigation.NavigationView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:background="@color/teal_200"
+            android:background="#2B2E4A"
             android:layout_gravity="start"
             android:fitsSystemWindows="true"
-            app:headerLayout="@layout/header_layout"
+
+            app:headerLayout="@layout/list_header_layout"
             app:menu="@menu/navigation_menu"
             android:id="@+id/navigationView"/>
     </androidx.drawerlayout.widget.DrawerLayout>

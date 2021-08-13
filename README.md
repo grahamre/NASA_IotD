@@ -18,7 +18,7 @@ DONE [4.  The software must have at least 4 or more activities. Your activity mu
     selecting a graphical icon from a Toolbar, and NavigationDrawer. The top navigation 
     layout should have the Activity’s title, and a version number.]
 
-DONE (Except App keeps crashing when loading Image) [5.  The project must use a fragment somewhere in its graphical interface.]
+DONE [5.  The project must use a fragment somewhere in its graphical interface.]
 
 DONE [6.  Each activity must have a help menu item that displays an AlertDialog with instructions for 
     how to use the interface.]

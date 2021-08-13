@@ -8,7 +8,6 @@
     android:background="@color/black"
     tools:context=".ImageOfTheDay">
 
-    <include layout="@layout/toolbar_navigation_bar" />
 
     <TextView
         android:id="@+id/welcomeTextIotD"

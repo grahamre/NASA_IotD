@@ -62,7 +62,6 @@
         android:textAlignment="center"
         android:textColor="#F5E8C7" />
 
-    <include layout="@layout/toolbar_navigation_bar" />
 
     <LinearLayout
         android:id="@+id/buttonsMain"

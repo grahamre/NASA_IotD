@@ -74,7 +74,7 @@ public class ImageOfTheDay extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_image_of_the_day);
+        setContentView(R.layout.nav_activity_image_of_the_day);
 
         Intent intent = getIntent();
         name = intent.getStringExtra("name");

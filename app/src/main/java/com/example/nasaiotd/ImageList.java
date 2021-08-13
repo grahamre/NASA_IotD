@@ -40,7 +40,7 @@ public class ImageList extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_image_list);
+        setContentView(R.layout.nav_activity_image_list);
 
         /** Populate ListView */
         ListView picList = findViewById(R.id.picList);

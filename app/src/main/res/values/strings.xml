@@ -18,5 +18,6 @@
     <!-- For Toolbar -->
     <string name="open" translatable="false">open</string>
     <string name="close" translatable="false">close</string>
+    <string name="navigation">Hello</string>
 
 </resources>

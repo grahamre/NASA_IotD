@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    tools:context=".TitlePage">
+
+    <ImageView
+        android:id="@+id/backgroundAnimation"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/gal_animation"
+        android:scaleType="fitXY" />
+    <TextView
+        android:id="@+id/bigTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:text="@string/titleText"
+        android:textAlignment="center"
+        android:textColor="#F5E8C7"
+        android:fontFamily="sans-serif-smallcaps"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/byline"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bigTitle"
+        android:text="by A. Patel &amp; G. Everitt"
+        android:textAlignment="center"
+        android:textColor="#F5E8C7"
+        android:fontFamily="sans-serif-smallcaps"
+        android:textSize="15sp" />
+
+    <Button
+        android:id="@+id/enterButton"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="40dp"
+        android:layout_centerHorizontal="true"
+        android:textColor="#F5E8C7"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:text="@string/enText" />
+
+
+</RelativeLayout>

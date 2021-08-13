@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:oneshot="false">
+
+    <item android:drawable="@drawable/gal_00" android:duration="70"/>
+    <item android:drawable="@drawable/gal_01" android:duration="70"/>
+    <item android:drawable="@drawable/gal_02" android:duration="70"/>
+    <item android:drawable="@drawable/gal_03" android:duration="70"/>
+    <item android:drawable="@drawable/gal_04" android:duration="70"/>
+    <item android:drawable="@drawable/gal_05" android:duration="70"/>
+    <item android:drawable="@drawable/gal_06" android:duration="70"/>
+    <item android:drawable="@drawable/gal_07" android:duration="70"/>
+    <item android:drawable="@drawable/gal_08" android:duration="70"/>
+    <item android:drawable="@drawable/gal_09" android:duration="70"/>
+    <item android:drawable="@drawable/gal_10" android:duration="70"/>
+    <item android:drawable="@drawable/gal_11" android:duration="70"/>
+    <item android:drawable="@drawable/gal_12" android:duration="70"/>
+    <item android:drawable="@drawable/gal_13" android:duration="70"/>
+    <item android:drawable="@drawable/gal_14" android:duration="70"/>
+    <item android:drawable="@drawable/gal_15" android:duration="70"/>
+    <item android:drawable="@drawable/gal_16" android:duration="70"/>
+    <item android:drawable="@drawable/gal_17" android:duration="70"/>
+    <item android:drawable="@drawable/gal_18" android:duration="70"/>
+    <item android:drawable="@drawable/gal_19" android:duration="70"/>
+    <item android:drawable="@drawable/gal_20" android:duration="70"/>
+    <item android:drawable="@drawable/gal_21" android:duration="70"/>
+    <item android:drawable="@drawable/gal_22" android:duration="70"/>
+    <item android:drawable="@drawable/gal_23" android:duration="70"/>
+
+</animation-list>

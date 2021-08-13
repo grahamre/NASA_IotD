@@ -1,18 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#161522"
     tools:context=".MainActivity">
 
+    <ImageView
+        android:id="@+id/logoImage"
+        android:layout_width="540px"
+        android:layout_height="540px"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/logo_animation"/>
+
     <TextView
+        android:id="@+id/welcomeTxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/logoImage"
+        android:layout_marginTop="20dp"
+        android:text="@string/welcomeText"
+        android:textAlignment="center"
+        android:textColor="#F5E8C7"
+        android:textSize="25dp" />
+
+    <TextView
+        android:id="@+id/nameMessage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_below="@+id/welcomeTxt"
+        android:layout_marginTop="30dp"
+        android:textSize="12sp"
+        android:textAlignment="center"
+        android:textColor="#F5E8C7"
+        android:layout_centerHorizontal="true"
+        android:text="@string/enterName" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <EditText
+        android:id="@+id/yourName"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/nameMessage"
+        android:layout_centerHorizontal="true"
+        android:textColor="#F5E8C7"
+        android:background="#2B2E4A"
+        android:hint="@string/hintText" />
+
+    <CheckBox
+        android:id="@+id/confirmBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/yourName"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:text="@string/confirmText"
+        android:textSize="20sp"
+        android:textAlignment="center"
+        android:textColor="#F5E8C7" />
+
+
+    <LinearLayout
+        android:id="@+id/buttonsMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true">
+
+        <Button
+            android:id="@+id/enterBtn"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:layout_weight="1"
+            android:textSize="10sp"
+            android:text="@string/enter"
+            tools:ignore="SmallSp" />
+
+        <Button
+            android:id="@+id/picBtn"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:layout_weight="1"
+            android:textSize="10sp"
+            android:text="@string/savedPics"
+            tools:ignore="SmallSp" />
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#161522"
+    tools:context=".DetailsFragment">
+
+    <TextView
+        android:id="@+id/titleHere"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/titleHereText"
+        android:textSize="15sp"
+        android:textAlignment="center"
+        android:textColor="#F5E8C7"/>
+
+    <TextView
+        android:id="@+id/dateHere"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/titleHere"
+        android:text="@string/dateHereText"
+        android:textSize="12sp"
+        android:textAlignment="center"
+        android:textColor="#F5E8C7"/>
+
+    <ImageView
+        android:id="@+id/imgOfDay"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:layout_marginTop="25dp"
+        android:layout_below="@id/dateHere"
+        android:scaleType="centerInside"
+        android:layout_centerHorizontal="true"/>
+
+    <Button
+        android:id="@+id/hideBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="Hide" />
+
+</RelativeLayout>

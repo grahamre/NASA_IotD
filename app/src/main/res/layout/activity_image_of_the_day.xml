@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/black"
+    tools:context=".ImageOfTheDay">
+
+
+    <TextView
+        android:id="@+id/welcomeTextIotD"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="10dp"
+        android:layout_alignParentTop="true"
+        android:text="@string/welcomeTextIotD"
+        android:gravity="center"
+        android:textColor="#F5E8C7"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/imageTitle"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_below="@+id/welcomeTextIotD"
+        android:gravity="center"
+        android:textColor="#F5E8C7"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/dateIotD"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_below="@+id/imageTitle"
+        android:gravity="center"
+        android:textColor="#F5E8C7"
+        android:textSize="15sp" />
+
+    <ImageButton
+        android:id="@+id/imageOfTheDay"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:layout_below="@+id/dateIotD"
+        android:scaleType="centerInside"
+        android:backgroundTint="#ff000000" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/imageOfTheDay"
+        android:layout_alignBottom="@id/imageOfTheDay"
+        android:layout_margin="100dp"
+        android:visibility="invisible" />
+
+    <LinearLayout
+        android:id="@+id/buttonsIotD"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true">
+
+        <Button
+            android:id="@+id/hdButtonIotD"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:layout_weight="1"
+            android:textSize="10sp"
+            android:text="@string/hdButtonText"
+            tools:ignore="SmallSp" />
+
+        <Button
+            android:id="@+id/dateButtonIotD"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:layout_weight="1"
+            android:textSize="10sp"
+            android:text="@string/selectDate"
+            tools:ignore="SmallSp" />
+
+        <Button
+            android:id="@+id/saveButtonIotD"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:layout_weight="1"
+            android:textSize="10sp"
+            android:text="@string/saveButtonText"
+            tools:ignore="SmallSp" />
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

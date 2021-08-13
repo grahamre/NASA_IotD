@@ -105,13 +105,13 @@ public class ImageOfTheDay extends AppCompatActivity {
 
         /** Clicking on the image button will summon a toast with info pertaining to the image. */
         ImageButton imageOfTheDay = findViewById(R.id.imageOfTheDay);
-        imageOfTheDay.setOnClickListener( (click) -> {
+        imageOfTheDay.setOnClickListener((click) -> {
             Toast.makeText(ImageOfTheDay.this, description, Toast.LENGTH_LONG).show();
         });
 
         /** This button opens the image's HD URL on the device's default browser. */
         Button hdButton = findViewById(R.id.hdButtonIotD);
-        hdButton.setOnClickListener( (click) -> {
+        hdButton.setOnClickListener((click) -> {
             Uri uri = Uri.parse(imageHDURL);
             Intent openBrowser = new Intent(Intent.ACTION_VIEW, uri);
             startActivity(openBrowser);
@@ -119,7 +119,7 @@ public class ImageOfTheDay extends AppCompatActivity {
 
         /** This button opens a date picker allowing users to choose an image by date. */
         Button dateButton = findViewById(R.id.dateButtonIotD);
-        dateButton.setOnClickListener( (click) -> {
+        dateButton.setOnClickListener((click) -> {
 
             Calendar c = Calendar.getInstance();
             int year = c.get(Calendar.YEAR);
@@ -148,7 +148,7 @@ public class ImageOfTheDay extends AppCompatActivity {
 
         /** This button saves the current image, adding it to the list view. */
         Button saveButton = findViewById(R.id.saveButtonIotD);
-        saveButton.setOnClickListener( (click) -> {
+        saveButton.setOnClickListener((click) -> {
             if (fileType.equals("image")) {
                 /** Add to the DB and get new ID */
                 ContentValues newRowValues = new ContentValues();
@@ -173,11 +173,6 @@ public class ImageOfTheDay extends AppCompatActivity {
         ProgressBar downloadProgress = findViewById(R.id.progressBar);
         downloadProgress.setVisibility(View.VISIBLE);
     }
-
-//    public boolean fileExists(String fname){
-//        File file = getBaseContext().getFileStreamPath(fname);
-//        return file.exists();
-//    }
 
     private class NASAImageQuery extends AsyncTask<String, Integer, String> {
 

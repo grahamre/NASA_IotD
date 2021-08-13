@@ -35,6 +35,7 @@ public class DetailsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
+        /** get data from bundle and inflate the fragment */
         View result = inflater.inflate(R.layout.fragment_details, container, false);
         pictureBundle = getArguments();
 
@@ -44,36 +45,11 @@ public class DetailsFragment extends Fragment {
         TextView picDate = result.findViewById(R.id.dateHere);
         picDate.setText(pictureBundle.getString("imageDate"));
 
-        /** ImageButton imgOTD = result.findViewById(R.id.imgOfDay);
-        imgOTD.setText(pictureBundle.getString("imageURL")); */
         imgOTD = (ImageView) result.findViewById(R.id.imgOfDay);
         url = pictureBundle.getString("imageURL");
 
         LoadImage req = new LoadImage();
         req.execute();
-        /** Every single time Application crashes when I try to load this piece of Code
-         *  I think it has something to do with taking quite a bit of time to download the image
-         *  Something I need to work on Thursday.
-         try {
-            ImageView i = (ImageView)result.findViewById(R.id.imgOfDay);
-            Bitmap bitmap = BitmapFactory.decodeStream((InputStream)new URL(pictureBundle.getString("imageURL")).getContent());
-            i.setImageBitmap(bitmap);
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } ****/
-
-        // This was just a code I was trying but didn't work either.
-        /** try {
-            url = pictureBundle.getString("imageURL");
-            URL imgURL = new URL(url);
-            ImageView imgOTD = (ImageView) result.findViewById(R.id.imgOfDay);
-            Bitmap bitmap = BitmapFactory.decodeStream(imgURL.openConnection().getInputStream());
-            imgOTD.setImageBitmap(bitmap);
-        } catch (IOException e) {
-            e.printStackTrace();
-        } */
 
         Button hideButton = (Button)result.findViewById(R.id.hideBtn);
         hideButton.setOnClickListener( click -> {

@@ -19,7 +19,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="200dp"
-        android:text="NASA Image of the Day"
+        android:text="@string/titleText"
         android:textAlignment="center"
         android:textColor="#F5E8C7"
         android:fontFamily="sans-serif-smallcaps"
@@ -45,7 +45,7 @@
         android:layout_centerHorizontal="true"
         android:textColor="#F5E8C7"
         style="@style/Widget.MaterialComponents.Button.TextButton"
-        android:text="Enter" />
+        android:text="@string/enText" />
 
 
 </RelativeLayout>

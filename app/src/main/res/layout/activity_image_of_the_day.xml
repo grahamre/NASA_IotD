@@ -72,7 +72,7 @@
             android:layout_marginHorizontal="5dp"
             android:layout_weight="1"
             android:textSize="10sp"
-            android:text="View in HD"
+            android:text="@string/hdButtonText"
             tools:ignore="SmallSp" />
 
         <Button
@@ -82,7 +82,7 @@
             android:layout_marginHorizontal="5dp"
             android:layout_weight="1"
             android:textSize="10sp"
-            android:text="Select Date"
+            android:text="@string/selectDate"
             tools:ignore="SmallSp" />
 
         <Button
@@ -92,7 +92,7 @@
             android:layout_marginHorizontal="5dp"
             android:layout_weight="1"
             android:textSize="10sp"
-            android:text="Save Image"
+            android:text="@string/saveButtonText"
             tools:ignore="SmallSp" />
 
     </LinearLayout>

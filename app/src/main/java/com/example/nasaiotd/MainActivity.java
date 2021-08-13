@@ -17,7 +17,6 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.res.ResourcesCompat;
@@ -47,21 +46,21 @@ public class MainActivity extends AppCompatActivity {
         TextView welcomeText = findViewById(R.id.welcomeTxt);
         welcomeText.setTypeface(exo);
 
-        // Run animation for logo
+        /** Running the animation for the logo */
         ImageView logo = findViewById(R.id.logoImage);
         logoAnimation = (AnimationDrawable) logo.getDrawable();
         logoAnimation.setCallback(logo);
         logoAnimation.setVisible(true, true);
         logo.post(new MainActivity.Starter());
 
-        // Get name from user
+        /** This is used to obtain the name from the user */
         EditText yourName = findViewById(R.id.yourName);
         name = yourName.getText().toString();
 
         /** Toolbar and Navigation Bar Code */
         Toolbar toolbar = findViewById(R.id.toolbar);
 
-        //Navigation drawer
+        /** Navigation Drawer code */
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,
                 drawer, toolbar, R.string.open, R.string.close);
@@ -131,7 +130,7 @@ public class MainActivity extends AppCompatActivity {
         inflater.inflate(R.menu.toolbar_menu, menu);
         return true;
     }
-
+    /** This function here will start activities based on what item is selected from Toolbar */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         Intent intent;
@@ -153,12 +152,9 @@ public class MainActivity extends AppCompatActivity {
             case R.id.choice4:
                 /** Alert Dialogue goes here for help (instructions) */
                 AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
-                alertDialogBuilder.setTitle("Instructions for Home Page")
+                alertDialogBuilder.setTitle(R.string.hPtxtTitle)
                         //what is the message
-                        .setMessage("This is the Home Page of the app. " +
-                                "\n 1. You can enter your name in the space provided." +
-                                "\n 2. To enter the app, click the Enter the App Button" +
-                                "\n 3. To Access your saved images, click the Access your saved images button.") //gives the position of the row selected
+                        .setMessage(R.string.hPtxt)
                         .setPositiveButton("Ok", (click, arg) -> {
                         })
                         .create().show(); //creating the dialog
@@ -166,7 +162,7 @@ public class MainActivity extends AppCompatActivity {
         }
         return true;
     }
-
+    /** This function will start activities based on what is selected from the navigation drawer */
     public boolean onNavigationItemSelected(MenuItem item) {
         Intent intent;
         switch(item.getItemId())
@@ -183,17 +179,12 @@ public class MainActivity extends AppCompatActivity {
                 intent = new Intent(this, ImageOfTheDay.class);
                 startActivity(intent);
                 break;
-                //setResult(500);
-                // finish();
             case R.id.help:
                 /** Alert Dialogue goes here for help (instructions) */
                 AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
-                alertDialogBuilder.setTitle("Instructions for Home Page")
+                alertDialogBuilder.setTitle(R.string.hPtxtTitle)
                         //what is the message
-                        .setMessage("This is the Home Page of the app. " +
-                                "\n 1. You can enter your name in the space provided." +
-                                "\n 2. To enter the app, click the Enter the App Button" +
-                                "\n 3. To Access your saved images, click the Access your saved images button.") //gives the position of the row selected
+                        .setMessage(R.string.hPtxt)
                         .setPositiveButton("Ok", (click, arg) -> {
                         })
                         .create().show(); //creating the dialog

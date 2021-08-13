@@ -9,15 +9,49 @@
     <string name="cbMessage1">You have confirmed your humanity</string>
     <string name="cbMessage2">Please confirm your humanity</string>
 
+    <!-- Title Page -->
+    <string name="titleText">NASA Image of the Day</string>
+    <string name="enText">Enter</string>
+
+    <!-- Main Activity -->
+    <string name="enterName">Enter Your Name:</string>
+    <string name="hintText">Enter Your Name...</string>
+    <string name="confirmText">Are you a human from Earth?</string>
+
     <!--Image of the Day Activity-->
     <string name="hdButtonText">View in HD</string>
+    <string name="selectDate">Select Date</string>
+    <string name="saveButtonText">Save Image</string>
     <string name="welcomeTextIotD">Hey there "%s", check out today\'s pic from NASA!</string>
     <string name="saveConfirm">Saved</string>
     <string name="saveDeny">Cannot be saved</string>
+    <string name="dayText">On This Day...</string>
 
     <!-- For Toolbar -->
-    <string name="open" translatable="false">open</string>
-    <string name="close" translatable="false">close</string>
-    <string name="navigation">Hello</string>
+    <string name="open">open</string>
+    <string name="close">close</string>
+    <string name="navigation">Hello!</string>
+
+    <!-- Fragment texts -->
+    <string name="titleHereText">Title Here</string>
+    <string name="dateHereText">Date Here</string>
+
+    <!-- Menu texts -->
+    <string name="menuHome">Home Page</string>
+    <string name="menuGallery">Picture Gallery</string>
+    <string name="menuIOTD">Image of the Day</string>
+    <string name="menuHelp">Help</string>
+
+    <!-- Alert Dialogue Texts - Home Page -->
+    <string name="hPtxtTitle">Instructions for Home Page</string>
+    <string name="hPtxt">This is the Home Page of the app.\n1. You can enter your name in the space provided.\n2. To enter the app, click the Enter the App Button.\n3. To Access your saved images, click the Access your saved images button.</string>
+
+    <!-- Alert Dialogue Texts - Image of the Day Page -->
+    <string name="iotdTxtTitle">Instructions for Image Of The Day Page</string>
+    <string name="iotdTxt">This is the Image Of The Day Page.\n1. Here you can see the current Image of the day based on the date.\n2. In order to see previous Image of the days, You can click SELECT DATE button to select a previous date.\n3. To save an Image you like, when your Image is displayed, you can click SAVE IMAGE button. Your Image will be saved in Gallery.\n4. If you want to see the Image in HD then you can click VIEW IN HD button and it will open up browser to view the image.</string>
+
+    <!-- Alert Dialogue Texts - Saved Images Page -->
+    <string name="svdTxtTitle">Instructions for Saved Images Page</string>
+    <string name="svdTxt">Gallery of all the Saved Images\n1. You can click on any image to see details about the image, such as Title, Date, and Image.\n2. To delete the image, Hold your click on an image and Dialogue will pop up to prompt the delete action.\n3. You can click GO TO HOMEPAGE Button to bring yourself back to Home Page</string>
 
 </resources>

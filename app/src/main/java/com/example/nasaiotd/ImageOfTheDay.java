@@ -82,7 +82,7 @@ public class ImageOfTheDay extends AppCompatActivity {
         /** Toolbar and Navigation Bar Code */
         Toolbar toolbar = findViewById(R.id.toolbar);
 
-        //Navigation drawer similar to inclassexample code
+        /** Navigation Drawer code */
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,
                 drawer, toolbar, R.string.open, R.string.close);
@@ -93,7 +93,7 @@ public class ImageOfTheDay extends AppCompatActivity {
         navigationView.setNavigationItemSelectedListener(this::onNavigationItemSelected);
         /** Toolbar and Navigation Bar Code Ends */
 
-        // Append current date to API URL and query.
+        /** Append current date to API URL and query. */
         apiLinkDate = FORMATTER.format(Calendar.getInstance().getTime());
         req = new NASAImageQuery();
         req.execute(apiLink + apiLinkDate);
@@ -103,13 +103,13 @@ public class ImageOfTheDay extends AppCompatActivity {
         welcomeTextIotD.setText(namePasser);
 
 
-        // Clicking on the image button will summon a toast with info pertaining to the image.
+        /** Clicking on the image button will summon a toast with info pertaining to the image. */
         ImageButton imageOfTheDay = findViewById(R.id.imageOfTheDay);
         imageOfTheDay.setOnClickListener( (click) -> {
             Toast.makeText(ImageOfTheDay.this, description, Toast.LENGTH_LONG).show();
         });
 
-        // This button opens the image's HD URL on the device's default browser.
+        /** This button opens the image's HD URL on the device's default browser. */
         Button hdButton = findViewById(R.id.hdButtonIotD);
         hdButton.setOnClickListener( (click) -> {
             Uri uri = Uri.parse(imageHDURL);
@@ -117,7 +117,7 @@ public class ImageOfTheDay extends AppCompatActivity {
             startActivity(openBrowser);
         });
 
-        // This button opens a date picker allowing users to choose an image by date.
+        /** This button opens a date picker allowing users to choose an image by date. */
         Button dateButton = findViewById(R.id.dateButtonIotD);
         dateButton.setOnClickListener( (click) -> {
 
@@ -127,30 +127,30 @@ public class ImageOfTheDay extends AppCompatActivity {
             int day = c.get(Calendar.DAY_OF_MONTH);
             DatePickerDialog datePicker = new DatePickerDialog(this, (datePickerL, chosenYear, chosenMonth, chosenDay) -> {
 
-                // Get date from the date picker.
+                /** Get date from the date picker. */
                 Calendar c2 = Calendar.getInstance();
                 c2.set(chosenYear, chosenMonth, chosenDay);
 
-                // Format date to append to NASA API URL.
+                /** Format date to append to NASA API URL. */
                 apiLinkDate = FORMATTER.format(c2.getTime());
 
-                // Run new query with chosen date.
+                /** Run new query with chosen date. */
                 req = new NASAImageQuery();
                 req.execute(apiLink + apiLinkDate);
 
-                // Update welcome message
-                // *************** translate **********
-                welcomeTextIotD.setText("On this day...");
+                /** Update welcome message */
+                /** *************** translate ********** */
+                welcomeTextIotD.setText(R.string.dayText);
 
             }, year, month, day);
             datePicker.show();
         });
 
-        // This button saves the current image, adding it to the list view.
+        /** This button saves the current image, adding it to the list view. */
         Button saveButton = findViewById(R.id.saveButtonIotD);
         saveButton.setOnClickListener( (click) -> {
             if (fileType.equals("image")) {
-                // Add to the DB and get new ID
+                /** Add to the DB and get new ID */
                 ContentValues newRowValues = new ContentValues();
                 newRowValues.put(ImageDBOpener.COL_TITLE, title);
                 newRowValues.put(ImageDBOpener.COL_DATE, date);
@@ -158,12 +158,12 @@ public class ImageOfTheDay extends AppCompatActivity {
                 newRowValues.put(ImageDBOpener.COL_URL, imageURL);
                 newRowValues.put(ImageDBOpener.COL_HDURL, imageHDURL);
 
-                // Get DB connection and insert new values.
+                /** Get DB connection and insert new values. */
                 ImageDBOpener imageDBOpener = new ImageDBOpener(this);
                 db = imageDBOpener.getWritableDatabase();
                 db.insert(ImageDBOpener.TABLE_NAME, null, newRowValues);
 
-                // Verify that the image has been saved
+                /** Verify that the image has been saved */
                 Toast.makeText(ImageOfTheDay.this, R.string.saveConfirm, Toast.LENGTH_SHORT).show();
             } else {
                 Toast.makeText(ImageOfTheDay.this, R.string.saveDeny, Toast.LENGTH_SHORT).show();
@@ -202,7 +202,7 @@ public class ImageOfTheDay extends AppCompatActivity {
                 }
                 String result = sb.toString();
 
-                // convert string to JSON:
+                /** convert string to JSON: */
                 JSONObject nasaImageData = new JSONObject(result);
 
                 fileType = null;
@@ -210,14 +210,14 @@ public class ImageOfTheDay extends AppCompatActivity {
                 imageURL = nasaImageData.getString("url");
                 date = nasaImageData.getString("date");
 
-                // Handle non-images.
+                /** Handle non-images. */
                 if (fileType.equals("image")) {
-                    // Pull API data.
+                    /** Pull API data. */
                     title = nasaImageData.getString("title");
                     description = nasaImageData.getString("explanation");
                     imageHDURL = nasaImageData.getString("hdurl");
 
-                    // get image
+                    /** get image */
                     nasaImage = null;
                     url = new URL(imageURL);
                     urlConnection = (HttpURLConnection) url.openConnection();
@@ -268,12 +268,13 @@ public class ImageOfTheDay extends AppCompatActivity {
     /** Toolbar Functions */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        //Inflating the menu items for use in the action bar
+        /** Inflating the menu items for use in the action bar */
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.toolbar_menu, menu);
         return true;
     }
 
+    /** This function here will start activities based on what item is selected from Toolbar */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         Intent intent;
@@ -295,12 +296,8 @@ public class ImageOfTheDay extends AppCompatActivity {
             case R.id.choice4:
                 /** Alert Dialogue goes here for help (instructions) */
                 AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
-                alertDialogBuilder.setTitle("Instructions for Image Of The Day Page")
-                        .setMessage("This is the Image Of The Day Page. " +
-                                "\n 1. Here you can see the current Image of the day based on the date." +
-                                "\n 2. In order to see previous Image of the days, You can click SELECT DATE button to select a previous date. " +
-                                "\n 3. To save an Image you like, when your Image is displayed, you can click SAVE IMAGE button. Your Image will be saved in Gallery." +
-                                "\n 4. If you want to see the Image in HD then you can click VIEW IN HD button and it will open up browser to view the image.")
+                alertDialogBuilder.setTitle(R.string.iotdTxtTitle)
+                        .setMessage(R.string.iotdTxt)
                         .setPositiveButton("Ok", (click, arg) -> {
                         })
                         .create().show(); //creating the dialogue
@@ -309,6 +306,7 @@ public class ImageOfTheDay extends AppCompatActivity {
         return true;
     }
 
+    /** This function will start activities based on what is selected from the navigation drawer */
     public boolean onNavigationItemSelected(MenuItem item) {
         Intent intent;
         switch(item.getItemId())
@@ -324,17 +322,11 @@ public class ImageOfTheDay extends AppCompatActivity {
             case R.id.iotd:
                 intent = new Intent(this, ImageOfTheDay.class);
                 startActivity(intent);
-                //setResult(500);
-                // finish();
             case R.id.help:
                 /** Alert Dialogue goes here for help (instructions) */
                 AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
-                alertDialogBuilder.setTitle("Instructions for Image Of The Day Page")
-                        .setMessage("This is the Image Of The Day Page. " +
-                                "\n 1. Here you can see the current Image of the day based on the date." +
-                                "\n 2. In order to see previous Image of the days, You can click SELECT DATE button to select a previous date. " +
-                                "\n 3. To save an Image you like, when your Image is displayed, you can click SAVE IMAGE button. Your Image will be saved in Gallery." +
-                                "\n 4. If you want to see the Image in HD then you can click VIEW IN HD button and it will open up browser to view the image.")
+                alertDialogBuilder.setTitle(R.string.iotdTxtTitle)
+                        .setMessage(R.string.iotdTxt)
                         .setPositiveButton("Ok", (click, arg) -> {
                         })
                         .create().show(); //creating the dialog

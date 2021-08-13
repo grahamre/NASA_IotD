@@ -9,7 +9,50 @@
     <string name="cbMessage1">Potwierdziłeś swoje człowieczeństwo</string>
     <string name="cbMessage2">Proszę potwierdzić swoje człowieczeństwo</string>
 
+    <!-- Title Page -->
+    <string name="titleText">NASA Obraz Dnia</string>
+    <string name="enText">Wchodzić</string>
+
+    <!-- Main Activity -->
+    <string name="enterName">Wpisz swoje imię:</string>
+    <string name="hintText">Wpisz swoje imię...</string>
+    <string name="confirmText">Czy jesteś człowiekiem z Ziemi?</string>
+
     <!--ImageOfTheDay Activity-->
     <string name="hdButtonText">Zobacz w jakości HD</string>
+    <string name="selectDate">Wybierz datę</string>
+    <string name="saveButtonText">Zapisać obraz</string>
     <string name="welcomeTextIotD">Witam %1$s, spójrz na dzisiejszy obraz NASA!</string>
+    <string name="saveConfirm">Zapisane</string>
+    <string name="saveDeny">Nie można zapisać</string>
+    <string name="dayText">Tego dnia...</string>
+
+    <!-- For Toolbar -->
+    <string name="open">otwarty</string>
+    <string name="close">blisko</string>
+    <string name="navigation">Cześć!</string>
+
+    <!-- Fragment texts -->
+    <string name="titleHereText">Tytuł tutaj</string>
+    <string name="dateHereText">Data tutaj</string>
+
+    <!-- Menu texts -->
+    <string name="menuHome">Strona główna</string>
+    <string name="menuGallery">Galeria zdjęć</string>
+    <string name="menuIOTD">Obraz dnia</string>
+    <string name="menuHelp">Pomoc</string>
+
+    <!-- Alert Dialogue Texts - Home Page -->
+    <string name="hPtxtTitle">Instrukcje dotyczące strony głównej</string>
+    <string name="hPtxt">To jest strona główna aplikacji.\n1. W odpowiednim miejscu możesz wpisać swoje imię i nazwisko.\n2. Aby wejść do aplikacji, kliknij przycisk Enter App.\n3. Aby uzyskać dostęp do zapisanych obrazów, kliknij przycisk Uzyskaj dostęp do zapisanych obrazów.</string>
+
+    <!-- Alert Dialogue Texts - Image of the Day Page -->
+    <string name="iotdTxtTitle">Instrukcje dotyczące strony obrazu dnia</string>
+    <string name="iotdTxt">To jest Strona Obraz Dnia.\n1. Tutaj możesz zobaczyć aktualny obraz dnia na podstawie daty.\n2. Aby zobaczyć poprzedni obraz dni, możesz kliknąć przycisk WYBIERZ DATĘ, aby wybrać poprzednią datę.\n3. Aby zapisać obraz, który Ci się podoba, gdy obraz jest wyświetlany, możesz kliknąć przycisk ZAPISZ OBRAZ. Twój obraz zostanie zapisany w Galerii.\n4. Jeśli chcesz zobaczyć obraz w jakości HD, możesz kliknąć przycisk WYŚWIETL W HD i otworzy się przeglądarka, aby wyświetlić obraz.</string>
+
+    <!-- Alert Dialogue Texts - Saved Images Page -->
+    <string name="svdTxtTitle">Instrukcje dotyczące strony Zapisane obrazy</string>
+    <string name="svdTxt">Galeria wszystkich zapisanych obrazów\n1. Możesz kliknąć dowolny obraz, aby zobaczyć szczegóły obrazu, takie jak tytuł, data i obraz.\n2. Aby usunąć obraz, przytrzymaj go, a pojawi się okno dialogowe z prośbą o usunięcie.\n3. Możesz kliknąć przycisk PRZEJDŹ DO STRONY GŁÓWNEJ, aby wrócić do strony głównej</string>
+
+
 </resources>

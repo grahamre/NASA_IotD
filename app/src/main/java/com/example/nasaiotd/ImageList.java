@@ -52,7 +52,7 @@ public class ImageList extends AppCompatActivity {
         /** Toolbar and Navigation Bar Code */
         Toolbar toolbar = findViewById(R.id.toolbar);
 
-        //Navigation drawer similar to inclassexample code
+        /** Navigation Drawer code */
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.open, R.string.close);
         drawer.addDrawerListener(toggle);
@@ -62,11 +62,11 @@ public class ImageList extends AppCompatActivity {
         navigationView.setNavigationItemSelectedListener(this::onNavigationItemSelected);
         /** Toolbar and Navigation Bar Code Ends */
 
-        //Go Back To Homepage button
+        /** Go Back To Homepage button */
         Button goBack = findViewById(R.id.goBack);
 
 
-        //setOnClickListener for Go Back to Homepage button to point back to homepage
+        /** setOnClickListener for Go Back to Homepage button to point back to homepage */
         goBack.setOnClickListener( (click) -> {
             Intent homepage = new Intent(ImageList.this, MainActivity.class);
             startActivity(homepage);
@@ -114,6 +114,7 @@ public class ImageList extends AppCompatActivity {
         return true;
     }
 
+    /** This function here will start activities based on what item is selected from Toolbar */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         Intent intent;
@@ -135,11 +136,8 @@ public class ImageList extends AppCompatActivity {
             case R.id.choice4:
                 /** Alert Dialogue goes here for help (instructions) */
                 AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
-                alertDialogBuilder.setTitle("Instructions for Saved Images Page")
-                        .setMessage("Gallery of all the Saved Images " +
-                                "\n 1. You can click on any image to see details about the image, such as Title, Date, and Image." +
-                                "\n 2. To delete the image, Hold your click on an image and Dialogue will pop up to prompt the delete action." +
-                                "\n 3. You can click GO TO HOMEPAGE Button to bring yourself back to Home Page" )
+                alertDialogBuilder.setTitle(R.string.svdTxtTitle)
+                        .setMessage(R.string.svdTxt)
                         .setPositiveButton("Ok", (click, arg) -> {
                         })
                         .create().show(); //creating the dialog
@@ -148,6 +146,7 @@ public class ImageList extends AppCompatActivity {
         return true;
     }
 
+    /** This function will start activities based on what is selected from the navigation drawer */
     public boolean onNavigationItemSelected(MenuItem item) {
         Intent intent;
         switch(item.getItemId())
@@ -163,16 +162,11 @@ public class ImageList extends AppCompatActivity {
             case R.id.iotd:
                 intent = new Intent(this, ImageOfTheDay.class);
                 startActivity(intent);
-                //setResult(500);
-                // finish();
             case R.id.help:
                 /** Alert Dialogue goes here for help (instructions) */
                 AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
-                alertDialogBuilder.setTitle("Instructions for Saved Images Page")
-                        .setMessage("Gallery of all the Saved Images " +
-                                "\n 1. You can click on any image to see details about the image, such as Title, Date, and Image." +
-                                "\n 2. To delete the image, Hold your click on an image and Dialogue will pop up to prompt the delete action." +
-                                "\n 3. You can click GO TO HOMEPAGE Button to bring yourself back to Home Page" )
+                alertDialogBuilder.setTitle(R.string.svdTxtTitle)
+                        .setMessage(R.string.svdTxt)
                         .setPositiveButton("Ok", (click, arg) -> {
                         })
                         .create().show(); //creating the dialog

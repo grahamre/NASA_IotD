@@ -1,8 +1,11 @@
 # NASA_IotD
+
+This repo houses an app developed as a final project for a Mobile Graphical Interface Programming course. Requirements are listed below.
+
 ### NASA Image of the Day Application
 
 Graham Gammon-Everitt & Arpit Patel
-CST2335 - 450
+CST2335 - 450 Algonquin College
 
 ### Requirements
 
